@@ -4,85 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@drawable/landscape_menu"
     tools:context=".MainActivity">
 
-
-    <ImageButton
-        android:id="@+id/signout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="224dp"
-        android:layout_marginBottom="112dp"
-        android:scaleType="fitStart"
-        android:src="@drawable/signout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lightcontrol" />
 
     <ImageButton
         android:id="@+id/schedule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="124dp"
         android:scaleType="fitStart"
         android:src="@drawable/schedule"
         app:layout_constraintStart_toEndOf="@+id/direction"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/camera"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="108dp"
-        android:scaleType="fitStart"
-        android:src="@drawable/camera"
-        app:layout_constraintStart_toEndOf="@+id/schedule"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/availability"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="104dp"
-        android:scaleType="fitStart"
-        android:src="@drawable/availability"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
         android:id="@+id/gatecontrol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="124dp"
         android:scaleType="fitStart"
         android:src="@drawable/gatecontrols"
         app:layout_constraintStart_toEndOf="@+id/camera"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
+        android:id="@+id/lightcontrol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="124dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/lightcontrol"
+        app:layout_constraintStart_toEndOf="@+id/gatecontrol"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/availability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="124dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/availability"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/signout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/signout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/schedule"
+        app:layout_constraintVertical_bias="0.546" />
+
+    <ImageButton
         android:id="@+id/direction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="124dp"
         android:scaleType="fitStart"
         android:src="@drawable/direction"
         app:layout_constraintStart_toEndOf="@+id/availability"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/lightcontrol"
+        android:id="@+id/camera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="180dp"
-        android:layout_marginBottom="112dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="124dp"
         android:scaleType="fitStart"
-        android:src="@drawable/lightcontrol"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:src="@drawable/camera"
+        app:layout_constraintStart_toEndOf="@+id/schedule"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
