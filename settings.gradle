@@ -1,0 +1,2 @@
+include ':ParkSmartApp'
+rootProject.name = "ParkSmart"
