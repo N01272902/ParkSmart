@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "150528410702",
+    "firebase_url": "https://parksmart-database.firebaseio.com",
+    "project_id": "parksmart-database",
+    "storage_bucket": "parksmart-database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:150528410702:android:4008aac60f702e996c6f1f",
+        "android_client_info": {
+          "package_name": "com.smarttech.parksmart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "150528410702-3dr1s2mhg73prpm4kfdi3vdps804utr0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwDvIFpggcSpm4OzPt8DG60FjFM2gRbuo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "150528410702-3dr1s2mhg73prpm4kfdi3vdps804utr0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

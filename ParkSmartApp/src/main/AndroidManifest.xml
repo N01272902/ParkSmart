@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Launcher">
-        <activity android:name=".Availability"></activity>
+        <activity android:name=".ScheduleActivity"></activity>
+        <activity android:name=".Availability" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

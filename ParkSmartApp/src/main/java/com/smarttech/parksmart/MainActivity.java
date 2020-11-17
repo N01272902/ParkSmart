@@ -32,7 +32,31 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         //Sets up the splash screen
         setTheme(R.style.AppTheme);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
+        ImageButton imageButton = findViewById(R.id.availability);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //opens the activity_availability activity
+                Intent intent = new Intent(MainActivity.this,Availability.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton scheduleButton= findViewById(R.id.schedule);
+        scheduleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //opens the activity_availability activity
+                Intent intent = new Intent(MainActivity.this, ScheduleActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         //Getting Reference to Root Node
         DatabaseReference myRef = database.getReference();
@@ -45,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String x = dataSnapshot.child("x").getValue().toString();
                 String y = dataSnapshot.child("y").getValue().toString();
-                
+
 
                 String beginning = "google.navigation:q=";
                 String comma = ",";
@@ -79,18 +103,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        ImageButton imageButton = findViewById(R.id.availability);
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //opens the activity_availability activity
-                Intent intent = new Intent(MainActivity.this,Availability.class);
-                startActivity(intent);
-            }
-        });
 
     }
 }
