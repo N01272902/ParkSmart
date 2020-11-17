@@ -45,8 +45,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String x = dataSnapshot.child("x").getValue().toString();
                 String y = dataSnapshot.child("y").getValue().toString();
-
-                Toast.makeText(MainActivity.this, "Data Received: " + y, Toast.LENGTH_SHORT).show();
+                
 
                 String beginning = "google.navigation:q=";
                 String comma = ",";
