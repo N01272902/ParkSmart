@@ -57,56 +57,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-/*
-//Database connection setup
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //Getting Reference to Root Node
-        DatabaseReference myRef = database.getReference();
-        //Getting reference to "child 1" node
-        myRef = myRef.child("Coordinates");
-        //myRef.setValue("Vijay Matadeen");
-
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String x = dataSnapshot.child("x").getValue().toString();
-                String y = dataSnapshot.child("y").getValue().toString();
-
-
-                String beginning = "google.navigation:q=";
-                String comma = ",";
-                String end = "&mode=d";
-
-                final String URI_GPS = beginning + x + comma + y + end;
-
-
-                launch_Button = findViewById(R.id.direction);
-
-                launch_Button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        Intent intent = new Intent(Intent.ACTION_VIEW,
-                                Uri.parse(URI_GPS));
-
-                        intent.setPackage("com.google.android.apps.maps");
-                        //Intent chooser = Intent.createChooser(intent,"Launch Maps");
-
-                        if(intent.resolveActivity(getPackageManager()) != null) {
-                            startActivity(intent);
-                        }
-                    }
-                });
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.e(TAG, "onCancelled: Something went wrong! Error:" + databaseError.getMessage() );
-            }
-        });
-
- */
     }
 
     @Override

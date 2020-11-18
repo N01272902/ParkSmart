@@ -1,24 +1,23 @@
 <resources>
     <string name="app_name">Park Smart</string>
-    <string name="delete_later">This is the availability activity !!!! Insert function here!</string>
 
     <!--Joseph's Strings  -->
     <string name="nav_home">Home</string>
     <string name="nav_schedule">Schedule</string>
     <string name="nav_direction">Direction</string>
     <string name="nav_availability">Availability</string>
-    <string name="OpTime">Open Time</string>
-    <string name="end">End</string>
-    <string name="start">Start</string>
-    <string name="time">Time</string>
-    <string name="date">Date</string>
-    <string name="setSchedule">Set Schedule</string>
 
     <!--Jerin's Strings   -->
 
     <!--Mandeep's Strings  -->
 
     <!--Vijay's Strings   -->
+    <string name="OpTime">Open Time</string>
+    <string name="end">End</string>
+    <string name="start">Start</string>
+    <string name="time">Time</string>
+    <string name="date">Date</string>
+    <string name="setSchedule">Set Schedule</string>
     <string name="day">Day</string>
     <string name="editSchedule">Edit Schedule</string>
 

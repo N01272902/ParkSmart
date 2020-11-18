@@ -1,38 +1,4 @@
 <resources>
-    <string name="app_name">Park Smart</string>
-    <string name="delete_later">This is the availability activity !!!! Insert function here!</string>
 
-    <string name="nav_home">Home</string>
-    <string name="nav_schedule">Schedule</string>
-    <string name="nav_direction">Direction</string>
-    <string name="nav_availability">Availability</string>
-
-    <!--Vijay's Strings   -->
-    <string name="OpTime">Entrez l\'heure de fonctionnement</string>
-    <string name="setSchedule">Fixer un Horaire</string>
-    <string name="date">Date</string>
-    <string name="day">journée</string>
-    <string name="time">Temps</string>
-    <string name="start">Début</string>
-    <string name="end">Fin</string>
-    <string name="editSchedule">Modifier le calendrier</string>
-
-    <string name="monday">Lundi</string>
-    <string name= "tuesday">Mardi</string>
-    <string name= "wednesday">Mercredi</string>
-    <string name= "thursday">Jeudi</string>
-    <string name= "friday">Vendredi</string>
-    <string name= "saturday">Samedi</string>
-    <string name= "sunday">Dimanche</string>
-
-    <string-array name="Week">
-        <item>Lundi</item>
-        <item>Mardi</item>
-        <item>Mercredi</item>
-        <item>Jeudi</item>
-        <item>Vendredi</item>
-        <item>Samedi</item>
-        <item>Dimanche</item>
-    </string-array>
 
 </resources>
