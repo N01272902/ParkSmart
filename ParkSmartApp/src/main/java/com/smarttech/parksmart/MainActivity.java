@@ -1,34 +1,15 @@
 package com.smarttech.parksmart;
 
-import androidx.annotation.NonNull;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Adapter;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
 public class MainActivity extends AppCompatActivity {
-
-    private ImageButton launch_Button;
-    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +18,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageButton imageButton = findViewById(R.id.availability);
-        imageButton.setOnClickListener(new View.OnClickListener() {
+        ImageButton availabilityButton = findViewById(R.id.availability);
+        availabilityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //opens the activity_availability activity
-                Intent intent = new Intent(MainActivity.this,Availability.class);
+                //opens the availability activity
+                Intent intent = new Intent(MainActivity.this, AvailabilityActivity.class);
                 startActivity(intent);
             }
         });
@@ -51,12 +32,32 @@ public class MainActivity extends AppCompatActivity {
         scheduleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //opens the activity_availability activity
+                //opens the schedule activity
                 Intent intent = new Intent(MainActivity.this, ScheduleActivity.class);
                 startActivity(intent);
             }
         });
 
+        ImageButton gateButton= findViewById(R.id.gatecontrol);
+        gateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //opens the gatecontrol activity
+                Intent intent = new Intent(MainActivity.this, GateControlActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton directionButton= findViewById(R.id.direction);
+        directionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //opens the direction activity
+                Intent intent = new Intent(MainActivity.this, DirectionActivity.class);
+                startActivity(intent);
+            }
+        });
+/*
 //Database connection setup
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -104,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(TAG, "onCancelled: Something went wrong! Error:" + databaseError.getMessage() );
             }
         });
+
+ */
     }
 
     @Override
