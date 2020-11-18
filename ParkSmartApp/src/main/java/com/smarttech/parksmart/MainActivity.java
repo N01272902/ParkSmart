@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         gateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //opens the gatecontrol activity
+                //opens the gate control activity
                 Intent intent = new Intent(MainActivity.this, GateControlActivity.class);
                 startActivity(intent);
             }
@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //if user pressed "yes", then he is allowed to exit from application
+                finishAffinity();
                 finish();
             }
         });

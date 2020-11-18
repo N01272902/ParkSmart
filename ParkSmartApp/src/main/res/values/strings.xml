@@ -76,7 +76,7 @@
         <item>Sunday</item>
     </string-array>
     <string name="editTextTextEmailAddress">Enter email</string>
-    <string name="editTextTextPassword">password</string>
+    <string name="editTextTextPassword">Password</string>
     <string name="signUp">Signup</string>
     <string name="signInButton">Login</string>
 
