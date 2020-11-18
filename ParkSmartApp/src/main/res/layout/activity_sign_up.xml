@@ -41,7 +41,6 @@
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/signInButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
@@ -57,4 +56,14 @@
         app:layout_constraintStart_toEndOf="@+id/signInButton"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
         app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_google_button"
+        android:layout_width="410dp"
+        android:layout_height="78dp"
+        android:layout_marginBottom="116dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
