@@ -7,22 +7,15 @@
     tools:context=".GateControlActivity"
     android:background="@color/colorAccent">
 
-    <FrameLayout
-        android:id="@+id/container"
+    <TextView
+        android:id="@+id/textView111"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/navigationView"
-        android:layout_marginBottom="90dp" >
-
-        <TextView
-            android:id="@+id/textView111"
-            android:layout_width="427dp"
-            android:layout_height="173dp"
-            android:layout_gravity="center"
-            android:text="Gate Control Activity "
-            android:textSize="40sp"
-            android:textAlignment="center"/>
-    </FrameLayout>
+        android:layout_height="65dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="4dp"
+        android:gravity="center_horizontal"
+        android:text="@string/gate_control_heading"
+        android:textSize="40sp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigationView"
@@ -36,5 +29,96 @@
         app:labelVisibilityMode="labeled"
         app:itemIconTint="@drawable/nav_item_color_state"
         app:itemTextColor="@drawable/nav_item_color_state"/>
+
+    <TextView
+        android:id="@+id/textViewGate1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView111"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/entry_gate"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textViewGate2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/navigationView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="146dp"
+        android:layout_marginBottom="203dp"
+        android:text="@string/exit_gate"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/openGateButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="184dp"
+        android:text="@string/open_gate" />
+
+    <Button
+        android:id="@+id/openGateButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/navigationView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="118dp"
+        android:text="@string/open_gate" />
+
+    <Button
+        android:id="@+id/closeGateButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="186dp"
+        android:layout_marginEnd="86dp"
+        android:text="@string/close_gate" />
+
+    <Button
+        android:id="@+id/closeGateButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/navigationView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="119dp"
+        android:text="@string/close_gate" />
+
+    <TextView
+        android:id="@+id/entryGateStatusTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/openGateButton1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="84dp"
+        android:text="@string/entry_gate_is_currently_closed"
+        android:textColor="@color/purple"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/exitGateStatusTV"
+        android:layout_width="241dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/navigationView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="84dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="58dp"
+        android:text="@string/exit_gate_is_currently_closed"
+        android:textColor="@color/purple"
+        android:textSize="15sp" />
+
 
 </RelativeLayout>

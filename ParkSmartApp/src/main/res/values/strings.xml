@@ -6,7 +6,13 @@
     <string name="nav_schedule">Schedule</string>
     <string name="nav_direction">Direction</string>
     <string name="nav_availability">Availability</string>
-
+    <string name="gate_control_heading">Gate Control</string>
+    <string name="entry_gate">Entry Gate</string>
+    <string name="exit_gate">Exit Gate</string>
+    <string name="open_gate">Open Gate</string>
+    <string name="close_gate">Close Gate</string>
+    <string name="entry_gate_is_currently_closed">Entry Gate is currently closed</string>
+    <string name="exit_gate_is_currently_closed">Exit Gate is currently closed</string>
     <!--Jerin's Strings   -->
 
     <!--Mandeep's Strings  -->
@@ -28,6 +34,7 @@
     <string name="friday">Friday</string>
     <string name="saturday">Saturday</string>
     <string name="sunday">Sunday</string>
+
 
     <string-array name="TimeAM">
         <item>12:00 AM</item>
