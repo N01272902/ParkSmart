@@ -119,4 +119,10 @@ public class SignUpActivity extends AppCompatActivity {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
 
     }
+
+    @Override
+    public void onBackPressed(){
+        finishAffinity();
+        finish();
+    }
 }
