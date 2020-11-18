@@ -12,6 +12,7 @@
         <activity android:name=".DirectionActivity" />
         <activity android:name=".GateControlActivity" />
         <activity android:name=".ScheduleActivity" />
+        <activity android:name=".ScheduleViewActivity" />
         <activity android:name=".AvailabilityActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

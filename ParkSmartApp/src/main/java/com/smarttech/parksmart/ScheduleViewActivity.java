@@ -5,21 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.TestLooperManager;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.w3c.dom.Text;
-
-public class ScheduleViewActivty extends AppCompatActivity {
+public class ScheduleViewActivity extends AppCompatActivity {
 
     TextView monS, monE;
     TextView tueS, tueE;
@@ -32,7 +30,11 @@ public class ScheduleViewActivty extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_schedule_view_activty);
+        setContentView(R.layout.activity_schedule_view_activity);
+
+        //BottomNavigation OnSelect function
+        BottomNavigationView navigation = findViewById(R.id.navigationView);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         monS=(TextView)findViewById(R.id.monStart);
         monE=(TextView)findViewById(R.id.monEnd);
@@ -115,9 +117,41 @@ public class ScheduleViewActivty extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //opens the activity_availability activity
-                Intent intent = new Intent(ScheduleViewActivty.this, ScheduleActivity.class);
+                Intent intent = new Intent(ScheduleViewActivity.this, ScheduleActivity.class);
                 startActivity(intent);
             }
         });
+
+
     }
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+                    Intent intent1 = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent1);
+                    break;
+
+                case R.id.navigation_availability:
+                    Intent intent2 = new Intent(getApplicationContext(), AvailabilityActivity.class);
+                    startActivity(intent2);
+                    break;
+
+                case R.id.navigation_direction:
+                    Intent intent3 = new Intent(getApplicationContext(), DirectionActivity.class);
+                    startActivity(intent3);
+                    break;
+
+                case R.id.navigation_schedule:
+                    Intent intent4 = new Intent(getApplicationContext(), ScheduleViewActivity.class);
+                    startActivity(intent4);
+                    break;
+                default:
+            }
+            return false;
+        }
+    };
 }

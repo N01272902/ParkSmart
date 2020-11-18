@@ -44,7 +44,7 @@ public class GateControlActivity extends AppCompatActivity {
                     break;
 
                 case R.id.navigation_schedule:
-                    Intent intent4 = new Intent(getApplicationContext(), ScheduleActivity.class);
+                    Intent intent4 = new Intent(getApplicationContext(), ScheduleViewActivity.class);
                     startActivity(intent4);
                     break;
                 default:

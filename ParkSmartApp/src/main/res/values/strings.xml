@@ -19,6 +19,17 @@
     <!--Mandeep's Strings  -->
 
     <!--Vijay's Strings   -->
+    <string name="day">Day</string>
+    <string name="editSchedule">Edit Schedule</string>
+
+    <string name="monday">Monday</string>
+    <string name= "tuesday">Tuesday</string>
+    <string name= "wednesday">Wednesday</string>
+    <string name= "thursday">Thursday</string>
+    <string name= "friday">Friday</string>
+    <string name= "saturday">Saturday</string>
+    <string name= "sunday">Sunday</string>
+
     <string-array name="TimeAM">
         <item>12:00 AM</item>
         <item>1:00 AM</item>

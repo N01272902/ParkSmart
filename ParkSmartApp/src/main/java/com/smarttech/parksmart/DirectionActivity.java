@@ -8,8 +8,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
@@ -93,7 +91,7 @@ public class DirectionActivity extends AppCompatActivity {
                     break;
 
                 case R.id.navigation_schedule:
-                    Intent intent4 = new Intent(getApplicationContext(), ScheduleActivity.class);
+                    Intent intent4 = new Intent(getApplicationContext(), ScheduleViewActivity.class);
                     startActivity(intent4);
                     break;
                 default:
