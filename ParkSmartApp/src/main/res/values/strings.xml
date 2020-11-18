@@ -22,12 +22,12 @@
     <string name="editSchedule">Edit Schedule</string>
 
     <string name="monday">Monday</string>
-    <string name= "tuesday">Tuesday</string>
-    <string name= "wednesday">Wednesday</string>
-    <string name= "thursday">Thursday</string>
-    <string name= "friday">Friday</string>
-    <string name= "saturday">Saturday</string>
-    <string name= "sunday">Sunday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
 
     <string-array name="TimeAM">
         <item>12:00 AM</item>
@@ -68,6 +68,10 @@
         <item>Saturday</item>
         <item>Sunday</item>
     </string-array>
+    <string name="editTextTextEmailAddress">Enter email</string>
+    <string name="editTextTextPassword">password</string>
+    <string name="signUp">Signup</string>
+    <string name="signInButton">Login</string>
 
 
 </resources>
