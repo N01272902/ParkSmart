@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AvailabilityActivity"
+    tools:context=".GateControlActivity"
     android:background="@color/colorAccent">
 
     <FrameLayout
@@ -19,7 +19,7 @@
             android:layout_width="427dp"
             android:layout_height="173dp"
             android:layout_gravity="center"
-            android:text="Availability Activity "
+            android:text="Gate Control Activity "
             android:textSize="40sp"
             android:textAlignment="center"/>
     </FrameLayout>
@@ -38,4 +38,3 @@
         app:itemTextColor="@drawable/nav_item_color_state"/>
 
 </RelativeLayout>
-

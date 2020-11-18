@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Park Smart</string>
     <string name="delete_later">This is the availability activity !!!! Insert function here!</string>
+    <string name="nav_schedule">Schedule</string>
+    <string name="nav_direction">Direction</string>
+    <string name="nav_availability">Availability</string>
+    <string name="nav_home">Home</string>
+
 </resources>
