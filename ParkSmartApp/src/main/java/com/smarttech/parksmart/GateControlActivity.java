@@ -64,7 +64,7 @@ public class GateControlActivity extends AppCompatActivity {
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
                 myRef = myRef.child("Gate_Control/Gate_1");
-                myRef.setValue("OPEN");
+                myRef.setValue(R.string.open);
 
             }
         });
@@ -79,7 +79,7 @@ public class GateControlActivity extends AppCompatActivity {
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
                 myRef = myRef.child("Gate_Control/Gate_2");
-                myRef.setValue("OPEN");
+                myRef.setValue(R.string.open);
 
             }
         });
@@ -94,7 +94,7 @@ public class GateControlActivity extends AppCompatActivity {
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
                 myRef = myRef.child("Gate_Control/Gate_1");
-                myRef.setValue("CLOSE");
+                myRef.setValue(R.string.close);
 
             }
         });
@@ -109,7 +109,7 @@ public class GateControlActivity extends AppCompatActivity {
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
                 myRef = myRef.child("Gate_Control/Gate_2");
-                myRef.setValue("CLOSE");
+                myRef.setValue(R.string.close);
 
             }
         });

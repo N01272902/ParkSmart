@@ -28,6 +28,9 @@
     <string name="editSchedule">Edit Schedule</string>
     <string name="schedule">Schedule</string>
 
+    <string name="open">OPEN</string>
+    <string name="close">CLOSE</string>
+
     <string name="monday">Monday</string>
     <string name="tuesday">Tuesday</string>
     <string name="wednesday">Wednesday</string>
