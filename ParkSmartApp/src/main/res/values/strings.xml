@@ -18,7 +18,7 @@
     <!--Mandeep's Strings  -->
 
     <!--Vijay's Strings   -->
-    <string name="OpTime">Open Time</string>
+    <string name="OpTime">Enter</string>
     <string name="end">End</string>
     <string name="start">Start</string>
     <string name="time">Time</string>
@@ -50,9 +50,6 @@
         <item>9:00 AM</item>
         <item>10:00 AM</item>
         <item>11:00 AM</item>
-    </string-array>
-
-    <string-array name="TimePM">
         <item>12:00 PM</item>
         <item>1:00 PM</item>
         <item>2:00 PM</item>
@@ -65,6 +62,34 @@
         <item>9:00 PM</item>
         <item>10:00 PM</item>
         <item>11:00 PM</item>
+    </string-array>
+
+    <string-array name="TimePM">
+        <item>12:00 AM</item>
+        <item>1:00 AM</item>
+        <item>2:00 AM</item>
+        <item>3:00 AM</item>
+        <item>4:00 AM</item>
+        <item>5:00 AM</item>
+        <item>6:00 AM</item>
+        <item>7:00 AM</item>
+        <item>8:00 AM</item>
+        <item>9:00 AM</item>
+        <item>10:00 AM</item>
+        <item>11:00 AM</item>
+        <item>12:00 PM</item>
+        <item>1:00 PM</item>
+        <item>2:00 PM</item>
+        <item>3:00 PM</item>
+        <item>4:00 PM</item>
+        <item>5:00 PM</item>
+        <item>6:00 PM</item>
+        <item>7:00 PM</item>
+        <item>8:00 PM</item>
+        <item>9:00 PM</item>
+        <item>10:00 PM</item>
+        <item>11:00 PM</item>
+
     </string-array>
 
     <string-array name="Week">
