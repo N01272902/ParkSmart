@@ -3,11 +3,16 @@ package com.smarttech.parksmart;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class GateControlActivity extends AppCompatActivity {
@@ -16,6 +21,68 @@ public class GateControlActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gate_control);
+
+        Button GateOpen1= findViewById(R.id.openGateButton1);
+        GateOpen1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                //Getting Reference to Root Node
+                DatabaseReference myRef = database.getReference();
+                DatabaseReference myRefEnd = database.getReference();
+                myRef = myRef.child("Gate_Control/Gate_1");
+                myRef.setValue("OPEN");
+
+            }
+        });
+
+        Button GateOpen2= findViewById(R.id.openGateButton2);
+        GateOpen2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                //Getting Reference to Root Node
+                DatabaseReference myRef = database.getReference();
+                DatabaseReference myRefEnd = database.getReference();
+                myRef = myRef.child("Gate_Control/Gate_2");
+                myRef.setValue("OPEN");
+
+            }
+        });
+
+        Button GateClose1= findViewById(R.id.closeGateButton1);
+        GateClose1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                //Getting Reference to Root Node
+                DatabaseReference myRef = database.getReference();
+                DatabaseReference myRefEnd = database.getReference();
+                myRef = myRef.child("Gate_Control/Gate_1");
+                myRef.setValue("CLOSE");
+
+            }
+        });
+
+        Button GateClose2= findViewById(R.id.closeGateButton2);
+        GateClose2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                //Getting Reference to Root Node
+                DatabaseReference myRef = database.getReference();
+                DatabaseReference myRefEnd = database.getReference();
+                myRef = myRef.child("Gate_Control/Gate_2");
+                myRef.setValue("CLOSE");
+
+            }
+        });
+
+
 
 
         BottomNavigationView navigation = findViewById(R.id.navigationView);
