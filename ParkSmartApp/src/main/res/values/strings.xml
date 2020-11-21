@@ -26,6 +26,7 @@
     <string name="setSchedule">Set Schedule</string>
     <string name="day">Day</string>
     <string name="editSchedule">Edit Schedule</string>
+    <string name="schedule">Schedule</string>
 
     <string name="monday">Monday</string>
     <string name="tuesday">Tuesday</string>

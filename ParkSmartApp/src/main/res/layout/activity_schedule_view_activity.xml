@@ -8,28 +8,50 @@
     android:orientation="vertical"
     tools:context=".ScheduleViewActivity">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="125dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/schedule"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:fontFamily="serif-monospace"
+            />
+
 
         <TextView
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:background="@drawable/back"
+            android:textColor="@color/black"
             android:text="@string/day"/>
 
         <TextView
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:background="@drawable/back"
             android:text="@string/start"/>
 
         <TextView
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:background="@drawable/back"
             android:text="@string/end"/>
 
     </LinearLayout>
@@ -38,24 +60,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp">
+        >
 
         <TextView
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:background="@drawable/back"
             android:text="@string/monday"/>
 
         <TextView
             android:id="@+id/monStart"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:background="@drawable/back"
             android:layout_marginTop="10dp" />
 
         <TextView
             android:id="@+id/monEnd"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:textSize="20dp"
             android:layout_marginTop="10dp"/>
 
     </LinearLayout>
@@ -63,25 +91,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp">
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:background="@drawable/back"
             android:text="@string/tuesday"/>
 
         <TextView
             android:id="@+id/tueStart"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:textSize="20dp"
             android:layout_marginTop="10dp" />
 
         <TextView
             android:id="@+id/tueEnd"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:textSize="20dp"
             android:layout_marginTop="10dp"/>
 
     </LinearLayout>
@@ -89,25 +122,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp">
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:background="@drawable/back"
             android:text="@string/wednesday"/>
 
         <TextView
             android:id="@+id/wedStart"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:textSize="20dp"
             android:layout_marginTop="10dp" />
 
         <TextView
             android:id="@+id/wedEnd"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:textSize="20dp"
             android:layout_marginTop="10dp"/>
 
     </LinearLayout>
@@ -115,25 +153,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp">
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:background="@drawable/back"
             android:text="@string/thursday"/>
 
         <TextView
             android:id="@+id/thurStart"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:background="@drawable/back"
             android:layout_marginTop="10dp" />
 
         <TextView
             android:id="@+id/thurEnd"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:background="@drawable/back"
             android:layout_marginTop="10dp"/>
 
     </LinearLayout>
@@ -141,25 +184,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp">
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:background="@drawable/back"
             android:text="@string/friday"/>
 
         <TextView
             android:id="@+id/friStart"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:textSize="20dp"
             android:layout_marginTop="10dp" />
 
         <TextView
             android:id="@+id/friEnd"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:textSize="20dp"
             android:layout_marginTop="10dp"/>
 
     </LinearLayout>
@@ -167,25 +215,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp">
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="@drawable/back"
+            android:textSize="20dp"
             android:text="@string/saturday"/>
 
         <TextView
             android:id="@+id/satStart"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:textSize="20dp"
             android:layout_marginTop="10dp" />
 
         <TextView
             android:id="@+id/satEnd"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:textSize="20dp"
             android:layout_marginTop="10dp"/>
 
     </LinearLayout>
@@ -193,25 +246,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp">
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:background="@drawable/back"
             android:text="@string/sunday"/>
 
         <TextView
             android:id="@+id/sunStart"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:background="@drawable/back"
             android:layout_marginTop="10dp" />
 
         <TextView
             android:id="@+id/sunEnd"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:textSize="20dp"
             android:layout_marginTop="10dp"/>
 
     </LinearLayout>
