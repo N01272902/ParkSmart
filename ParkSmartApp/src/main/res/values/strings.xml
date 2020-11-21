@@ -11,8 +11,8 @@
     <string name="exit_gate">Exit Gate</string>
     <string name="open_gate">Open Gate</string>
     <string name="close_gate">Close Gate</string>
-    <string name="entry_gate_is_currently_closed">Entry Gate is currently closed</string>
-    <string name="exit_gate_is_currently_closed">Exit Gate is currently closed</string>
+    <string name="entry_gate_is_currently_closed">Entry Gate is currently:</string>
+    <string name="exit_gate_is_currently_closed">Exit Gate is currently: </string>
     <!--Jerin's Strings   -->
 
     <!--Mandeep's Strings  -->

@@ -107,6 +107,24 @@
         android:textSize="15sp" />
 
     <TextView
+        android:id="@+id/StatusGate1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/openGateButton1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="84dp"
+        android:text="OPEN"
+        android:textColor="@color/purple"
+        android:textSize="15sp" />
+
+
+
+
+
+    <TextView
         android:id="@+id/exitGateStatusTV"
         android:layout_width="241dp"
         android:layout_height="wrap_content"
@@ -119,6 +137,21 @@
         android:text="@string/exit_gate_is_currently_closed"
         android:textColor="@color/purple"
         android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/StatusGate2"
+        android:layout_width="241dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/navigationView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="250dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="58dp"
+        android:text="OPEN"
+        android:textColor="@color/purple"
+        android:textSize="15sp" />
+
 
 
 </RelativeLayout>
