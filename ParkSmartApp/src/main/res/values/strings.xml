@@ -15,6 +15,13 @@
     <string name="exit_gate_is_currently_closed">Exit Gate is currently: </string>
     <!--Jerin's Strings   -->
 
+    <string name="lightControl">Light Control</string>
+    <string name="entryLight">Entry Light</string>
+    <string name="exitLight">Exit Light</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="la">Light is Currently: </string>
+
     <!--Mandeep's Strings  -->
 
     <!--Vijay's Strings   -->

@@ -28,6 +28,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton lightButton = findViewById(R.id.lightcontrol);
+        lightButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //opens the availability activity
+                Intent intent = new Intent(MainActivity.this, LightActivity.class);
+                startActivity(intent);
+            }
+        });
+
         ImageButton scheduleButton= findViewById(R.id.schedule);
         scheduleButton.setOnClickListener(new View.OnClickListener() {
             @Override
