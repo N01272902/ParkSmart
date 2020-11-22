@@ -116,7 +116,6 @@
         android:layout_marginStart="250dp"
         android:layout_marginTop="29dp"
         android:layout_marginEnd="84dp"
-        android:text="OPEN"
         android:textColor="@color/purple"
         android:textSize="15sp" />
 
@@ -148,7 +147,6 @@
         android:layout_marginStart="250dp"
         android:layout_marginEnd="84dp"
         android:layout_marginBottom="58dp"
-        android:text="OPEN"
         android:textColor="@color/purple"
         android:textSize="15sp" />
 

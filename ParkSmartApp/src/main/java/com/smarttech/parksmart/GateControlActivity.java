@@ -24,7 +24,6 @@ public class GateControlActivity extends AppCompatActivity {
     TextView Gate1;
     TextView Gate2;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +63,7 @@ public class GateControlActivity extends AppCompatActivity {
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
                 myRef = myRef.child("Gate_Control/Gate_1");
-                myRef.setValue(R.string.open);
+                myRef.setValue("OPEN");
 
             }
         });
@@ -79,7 +78,7 @@ public class GateControlActivity extends AppCompatActivity {
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
                 myRef = myRef.child("Gate_Control/Gate_2");
-                myRef.setValue(R.string.open);
+                myRef.setValue("OPEN");
 
             }
         });
@@ -94,7 +93,7 @@ public class GateControlActivity extends AppCompatActivity {
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
                 myRef = myRef.child("Gate_Control/Gate_1");
-                myRef.setValue(R.string.close);
+                myRef.setValue("CLOSE");
 
             }
         });
@@ -109,7 +108,7 @@ public class GateControlActivity extends AppCompatActivity {
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
                 myRef = myRef.child("Gate_Control/Gate_2");
-                myRef.setValue(R.string.close);
+                myRef.setValue("CLOSE");
 
             }
         });
