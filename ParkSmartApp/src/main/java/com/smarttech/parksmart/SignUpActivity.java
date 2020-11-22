@@ -105,11 +105,11 @@ public class SignUpActivity extends AppCompatActivity {
                                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                     startActivity(intent);
                                 }else{
-                                    password.setError(getString(R.string.PasswordErr));
+                                    password.setError("Incorrect password");
                                 }
                             }
                             else{
-                                email.setError(getString(R.string.emailUsrErr));
+                                email.setError("User does not exist");
                             }
                         }
 
@@ -158,7 +158,7 @@ public class SignUpActivity extends AppCompatActivity {
         googleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(SignUpActivity.this, R.string.google_button_toast, Toast.LENGTH_LONG).show();
+                Toast.makeText(SignUpActivity.this, "Sign in with Google Clicked", Toast.LENGTH_LONG).show();
             }
         });
 
