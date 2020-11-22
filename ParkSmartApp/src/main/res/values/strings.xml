@@ -23,6 +23,13 @@
     <string name="la">Light is Currently: </string>
 
     <!--Mandeep's Strings  -->
+    <string name="editTextTextEmailAddress">Enter email</string>
+    <string name="editTextTextPassword">Password</string>
+    <string name="signUp">Signup</string>
+    <string name="signInButton">Login</string>
+    <string name="checkbox">com.smarttech.parksmart.checkbox</string>
+    <string name="email">com.smarttech.parksmart.email</string>
+    <string name="password">com.smarttech.parksmart.password</string>
 
     <!--Vijay's Strings   -->
     <string name="OpTime">Enter</string>
@@ -87,10 +94,7 @@
         <item>Saturday</item>
         <item>Sunday</item>
     </string-array>
-    <string name="editTextTextEmailAddress">Enter email</string>
-    <string name="editTextTextPassword">Password</string>
-    <string name="signUp">Signup</string>
-    <string name="signInButton">Login</string>
+
 
 
 </resources>

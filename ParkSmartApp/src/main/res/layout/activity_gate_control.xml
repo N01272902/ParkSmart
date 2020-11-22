@@ -119,10 +119,6 @@
         android:textColor="@color/purple"
         android:textSize="15sp" />
 
-
-
-
-
     <TextView
         android:id="@+id/exitGateStatusTV"
         android:layout_width="241dp"
@@ -149,7 +145,5 @@
         android:layout_marginBottom="58dp"
         android:textColor="@color/purple"
         android:textSize="15sp" />
-
-
 
 </RelativeLayout>

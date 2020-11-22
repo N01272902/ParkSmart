@@ -4,9 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -25,8 +28,14 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    EditText email;
-    EditText password;
+
+    private SharedPreferences mPreferences;
+    private SharedPreferences.Editor mEditor;
+
+    private CheckBox mCheckbox;
+
+   private EditText email;
+   private EditText password;
     Button signUp;
     DatabaseReference reff;
     Button signIn;
@@ -38,10 +47,16 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        email = findViewById(R.id.editTextTextEmailAddress);
-        password = findViewById(R.id.editTextTextPassword);
+        mCheckbox = (CheckBox) findViewById(R.id.checkBox);
+        email = (EditText) findViewById(R.id.editTextTextEmailAddress);
+        password = (EditText) findViewById(R.id.editTextTextPassword);
         signUp = findViewById(R.id.signUpButton);
-        signIn = findViewById(R.id.signInButton);//
+        signIn = (Button) findViewById(R.id.signInButton);
+
+        mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        // mPreferences = getSharedPreferences("",getApplicationContext().MODE_PRIVATE);
+        mEditor = mPreferences.edit();
+
         member = new Member();
         reff = FirebaseDatabase.getInstance().getReference().child("Member");
         reff.addValueEventListener(new ValueEventListener() {
@@ -66,10 +81,12 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
+        checkSharedPreferences();
+
         signIn.setOnClickListener(new View.OnClickListener(){
             long childId=1;
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 reff = FirebaseDatabase.getInstance().getReference().child("Member");
                 reff.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -93,8 +110,6 @@ public class SignUpActivity extends AppCompatActivity {
                             else{
                                 email.setError("User does not exist");
                             }
-
-
                         }
 
                     }
@@ -105,6 +120,35 @@ public class SignUpActivity extends AppCompatActivity {
                     }
                 });
 
+                if(mCheckbox.isChecked()) {
+                    //set a checkbox when the app starts
+                    mEditor.putString(getString(R.string.checkbox), "True");
+                    mEditor.commit();
+
+                    //save the email
+                    String emailString = email.getText().toString();
+                    mEditor.putString(getString(R.string.email), emailString);
+                    mEditor.commit();
+
+                    //save the password
+                    String passString = password.getText().toString();
+                    mEditor.putString(getString(R.string.password), passString);
+                    mEditor.commit();
+
+                }  else{
+                    //set a checkbox when the app starts
+                    mEditor.putString(getString(R.string.checkbox), "False");
+                    mEditor.commit();
+
+                    //save the email
+                    mEditor.putString(getString(R.string.email),"");
+                    mEditor.commit();
+
+                    //save the password
+                    mEditor.putString(getString(R.string.password),"");
+                    mEditor.commit();
+
+                }
             }
         });
         // Configure sign-in to request the user's ID, email address, and basic
@@ -117,6 +161,22 @@ public class SignUpActivity extends AppCompatActivity {
         //Check for existing Google Sign In account, if the user is already signed in
         //the GoogleSigInAccount will be non-null
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+
+    }
+
+    private void checkSharedPreferences() {
+        String checkboxStr = mPreferences.getString(getString(R.string.checkbox), "False");
+        String emailStr = mPreferences.getString(getString(R.string.email), "");
+        String passwordStr = mPreferences.getString(getString(R.string.password), "");
+
+        email.setText(emailStr);
+        password.setText(passwordStr);
+
+        if(checkboxStr.equals("True")){
+            mCheckbox.setChecked(true);
+        }else{
+            mCheckbox.setChecked(false);
+        }
 
     }
 
