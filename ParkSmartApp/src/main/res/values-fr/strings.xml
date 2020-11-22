@@ -1,4 +1,108 @@
 <resources>
+    <string name="app_name">Park Smart</string>
 
+    <!--Joseph's Strings  -->
+    <string name="nav_home">Accueil</string>
+    <string name="nav_schedule">Programme</string>
+    <string name="nav_direction">Direction</string>
+    <string name="nav_availability">Disponibilité</string>
+    <string name="gate_control_heading">Contrôle de porte</string>
+    <string name="entry_gate">Porte d\'entrée</string>
+    <string name="exit_gate">Porte de sortie</string>
+    <string name="open_gate">Porte ouverte</string>
+    <string name="close_gate">Fermer la porte</string>
+    <string name="entry_gate_is_currently_closed">La porte d\'entrée est actuellement:</string>
+    <string name="exit_gate_is_currently_closed">La porte de sortie est actuellement:</string>
+    <string name="open">Ouvert</string>
+    <string name="close">Fermé</string>
+    <string name="DialogExitMsg">Voulez-vous sortir?</string>
+    <string name="DialogYes">Oui</string>
+    <string name="DialogNo">Non</string>
+
+    <!--Jerin's Strings   -->
+    <string name="lightControl">Contrôle de la lumière</string>
+    <string name="entryLight">Lumière d\'entrée</string>
+    <string name="exitLight">Lumière de sortie</string>
+    <string name="on">Sur</string>
+    <string name="off">De</string>
+    <string name="la">La lumière est actuellement:</string>
+
+    <!--Mandeep's Strings  -->
+    <string name="editTextTextEmailAddress">Entrez l\'email</string>
+    <string name="editTextTextPassword">Entrer le mot de passe</string>
+    <string name="signUp">S\'inscrire</string>
+    <string name="signInButton">S\'identifier</string>
+
+    <!--Saved Preference Strings... Do not translate -->
+    <string name="checkbox">com.smarttech.parksmart.checkbox</string>
+    <string name="email">com.smarttech.parksmart.email</string>
+    <string name="password">com.smarttech.parksmart.password</string>
+
+    <string name="google_button_toast">Connexion avec Google cliqué</string>
+    <string name="PasswordErr">Mot de passe incorrect</string>
+    <string name="emailUsrErr">L\'utilisateur ne quitte pas</string>
+    <string name="checkboxMsg">Se souvenir de mes informations de connexion</string>
+
+    <!--Vijay's Strings   -->
+    <string name="OpTime">Entrer</string>
+    <string name="end">Fin</string>
+    <string name="start">Début</string>
+    <string name="time">Temps</string>
+    <string name="date">Date</string>
+    <string name="setSchedule">Définir le calendrier</string>
+    <string name="day">Journée</string>
+    <string name="editSchedule">Modifier le calendrier</string>
+    <string name="schedule">Programme</string>
+
+    <string name="monday">Lundi</string>
+    <string name="tuesday">Mardi</string>
+    <string name="wednesday">Mercredi</string>
+    <string name="thursday">Jeudi</string>
+    <string name="friday">Vendredi</string>
+    <string name="saturday">Samedi</string>
+    <string name="sunday">Dimanche</string>
+
+    <string name="direction">Direction</string>
+
+    <string-array name="TimeAM">
+        <item>12:00 AM</item>
+        <item>1:00 AM</item>
+        <item>2:00 AM</item>
+        <item>3:00 AM</item>
+        <item>4:00 AM</item>
+        <item>5:00 AM</item>
+        <item>6:00 AM</item>
+        <item>7:00 AM</item>
+        <item>8:00 AM</item>
+        <item>9:00 AM</item>
+        <item>10:00 AM</item>
+        <item>11:00 AM</item>
+    </string-array>
+
+    <string-array name="TimePM">
+        <item>12:00 PM</item>
+        <item>1:00 PM</item>
+        <item>2:00 PM</item>
+        <item>3:00 PM</item>
+        <item>4:00 PM</item>
+        <item>5:00 PM</item>
+        <item>6:00 PM</item>
+        <item>7:00 PM</item>
+        <item>8:00 PM</item>
+        <item>9:00 PM</item>
+        <item>10:00 PM</item>
+        <item>11:00 PM</item>
+
+    </string-array>
+
+    <string-array name="Week">
+        <item>Lundi</item>
+        <item>Mardi</item>
+        <item>Mercredi</item>
+        <item>Jeudi</item>
+        <item>Vendredi</item>
+        <item>Samedi</item>
+        <item>Dimanche</item>
+    </string-array>
 
 </resources>

@@ -124,6 +124,7 @@ public class ScheduleViewActivity extends AppCompatActivity {
 
 
     }
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 

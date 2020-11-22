@@ -15,6 +15,9 @@
     <string name="exit_gate_is_currently_closed">Exit Gate is currently: </string>
     <string name="open">OPEN</string>
     <string name="close">CLOSE</string>
+    <string name="DialogExitMsg">Do you want to Exit?</string>
+    <string name="DialogYes">Yes</string>
+    <string name="DialogNo">No</string>
 
     <!--Jerin's Strings   -->
     <string name="lightControl">Light Control</string>
@@ -29,9 +32,16 @@
     <string name="editTextTextPassword">Password</string>
     <string name="signUp">Signup</string>
     <string name="signInButton">Login</string>
+
+    <!--Saved Preference Strings... Do not translate -->
     <string name="checkbox">com.smarttech.parksmart.checkbox</string>
     <string name="email">com.smarttech.parksmart.email</string>
     <string name="password">com.smarttech.parksmart.password</string>
+
+    <string name="google_button_toast">Sign in with Google Clicked</string>
+    <string name="PasswordErr">Incorrect password</string>
+    <string name="emailUsrErr">User does not exist</string>
+    <string name="checkboxMsg">Remember my login information</string>
 
     <!--Vijay's Strings   -->
     <string name="OpTime">Enter</string>
@@ -51,8 +61,8 @@
     <string name="friday">Friday</string>
     <string name="saturday">Saturday</string>
     <string name="sunday">Sunday</string>
-    <string name="direction">Direction</string>
 
+    <string name="direction">Direction</string>
 
     <string-array name="TimeAM">
         <item>12:00 AM</item>
