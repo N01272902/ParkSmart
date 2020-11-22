@@ -120,9 +120,6 @@
         android:textSize="15sp" />
 
 
-
-
-
     <TextView
         android:id="@+id/exitGateStatusTV"
         android:layout_width="241dp"

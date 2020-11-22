@@ -13,8 +13,10 @@
     <string name="close_gate">Close Gate</string>
     <string name="entry_gate_is_currently_closed">Entry Gate is currently:</string>
     <string name="exit_gate_is_currently_closed">Exit Gate is currently: </string>
-    <!--Jerin's Strings   -->
+    <string name="open">OPEN</string>
+    <string name="close">CLOSE</string>
 
+    <!--Jerin's Strings   -->
     <string name="lightControl">Light Control</string>
     <string name="entryLight">Entry Light</string>
     <string name="exitLight">Exit Light</string>
@@ -42,9 +44,6 @@
     <string name="editSchedule">Edit Schedule</string>
     <string name="schedule">Schedule</string>
 
-    <string name="open">OPEN</string>
-    <string name="close">CLOSE</string>
-
     <string name="monday">Monday</string>
     <string name="tuesday">Tuesday</string>
     <string name="wednesday">Wednesday</string>
@@ -52,6 +51,7 @@
     <string name="friday">Friday</string>
     <string name="saturday">Saturday</string>
     <string name="sunday">Sunday</string>
+    <string name="direction">Direction</string>
 
 
     <string-array name="TimeAM">
@@ -94,7 +94,5 @@
         <item>Saturday</item>
         <item>Sunday</item>
     </string-array>
-
-
 
 </resources>
