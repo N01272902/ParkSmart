@@ -1,17 +1,13 @@
 package com.smarttech.parksmart;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -24,11 +20,6 @@ public class ScheduleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
-        
-        //BottomNavigation onSelect function setup
-        BottomNavigationView navigation = findViewById(R.id.navigationView);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
 
         spinnerDay = (Spinner)findViewById(R.id.Weekday);
         spinnerAM = (Spinner)findViewById(R.id.AM_Time);
@@ -56,36 +47,5 @@ public class ScheduleActivity extends AppCompatActivity {
             }
         });
     }
-    
-    private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    Intent intent1 = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent1);
-                    break;
-
-                case R.id.navigation_availability:
-                    Intent intent2 = new Intent(getApplicationContext(), AvailabilityActivity.class);
-                    startActivity(intent2);
-                    break;
-
-                case R.id.navigation_direction:
-                    Intent intent3 = new Intent(getApplicationContext(), DirectionActivity.class);
-                    startActivity(intent3);
-                    break;
-
-                case R.id.navigation_schedule:
-                    Intent intent4 = new Intent(getApplicationContext(), ScheduleViewActivity.class);
-                    startActivity(intent4);
-                    break;
-                default:
-            }
-            return false;
-        }
-    };
 
 }

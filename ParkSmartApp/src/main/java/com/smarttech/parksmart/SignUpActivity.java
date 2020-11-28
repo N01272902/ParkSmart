@@ -27,7 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.concurrent.atomic.AtomicReference;
 
-public class SignUpActivity extends AppCompatActivity {
+public class   SignUpActivity extends AppCompatActivity {
 
     EditText email;
     EditText password;

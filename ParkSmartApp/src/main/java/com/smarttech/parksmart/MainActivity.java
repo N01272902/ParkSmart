@@ -3,11 +3,16 @@ package com.smarttech.parksmart;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,65 +23,44 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageButton availabilityButton = findViewById(R.id.availability);
-        availabilityButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //opens the availability activity
-                Intent intent = new Intent(MainActivity.this, AvailabilityActivity.class);
-                startActivity(intent);
-            }
-        });
+        //BottomNavigation OnSelect function
+        BottomNavigationView navigation = findViewById(R.id.navigationView);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        ImageButton lightButton = findViewById(R.id.lightcontrol);
-        lightButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //opens the availability activity
-                Intent intent = new Intent(MainActivity.this, LightActivity.class);
-                startActivity(intent);
-            }
-        });
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                new HomeActivity()).commit();
 
-        ImageButton scheduleButton= findViewById(R.id.schedule);
-        scheduleButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //opens the schedule View activity
-                Intent intent = new Intent(MainActivity.this, ScheduleViewActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        ImageButton gateButton= findViewById(R.id.gatecontrol);
-        gateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //opens the gate control activity
-                Intent intent = new Intent(MainActivity.this, GateControlActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        ImageButton directionButton= findViewById(R.id.direction);
-        directionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //opens the direction activity
-                Intent intent = new Intent(MainActivity.this, DirectionActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        ImageButton signOutButton = findViewById(R.id.signout);
-        signOutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),SignUpActivity.class);
-                startActivity(intent);
-            }
-        });
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment selectedFragment = null;
+
+            switch (item.getItemId()){
+                case R.id.navigation_home:
+                    selectedFragment = new HomeActivity();
+                    break;
+
+                case R.id.navigation_schedule:
+                    selectedFragment = new ScheduleViewActivity();
+                    break;
+
+                case R.id.navigation_availability:
+                    selectedFragment = new AvailabilityActivity();
+                    break;
+
+                case R.id.navigation_direction:
+                    selectedFragment = new DirectionActivity();
+                    break;
+            }
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    selectedFragment).commit();
+
+            return true;
+        }
+    };
 
     @Override
     public void onBackPressed() {

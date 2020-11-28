@@ -17,19 +17,6 @@
         android:text="@string/gate_control_heading"
         android:textSize="40sp" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigationView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        app:itemBackground="?selectableItemBackgroundBorderless"
-        app:itemHorizontalTranslationEnabled="true"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/bottom_nav_menu"
-        app:labelVisibilityMode="labeled"
-        app:itemIconTint="@drawable/nav_item_color_state"
-        app:itemTextColor="@drawable/nav_item_color_state"/>
-
     <TextView
         android:id="@+id/textViewGate1"
         android:layout_width="wrap_content"
@@ -45,10 +32,10 @@
         android:id="@+id/textViewGate2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/navigationView"
         android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="146dp"
-        android:layout_marginBottom="203dp"
+        android:layout_marginBottom="259dp"
         android:text="@string/exit_gate"
         android:textSize="30sp" />
 
@@ -66,10 +53,10 @@
         android:id="@+id/openGateButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/navigationView"
         android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="84dp"
-        android:layout_marginBottom="118dp"
+        android:layout_marginBottom="174dp"
         android:text="@string/open_gate" />
 
     <Button
@@ -86,10 +73,10 @@
         android:id="@+id/closeGateButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/navigationView"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginEnd="88dp"
-        android:layout_marginBottom="119dp"
+        android:layout_marginBottom="174dp"
         android:text="@string/close_gate" />
 
     <TextView
@@ -123,12 +110,12 @@
         android:id="@+id/exitGateStatusTV"
         android:layout_width="241dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/navigationView"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="84dp"
         android:layout_marginEnd="84dp"
-        android:layout_marginBottom="58dp"
+        android:layout_marginBottom="114dp"
         android:text="@string/exit_gate_is_currently_closed"
         android:textColor="@color/purple"
         android:textSize="15sp" />
@@ -137,12 +124,12 @@
         android:id="@+id/StatusGate2"
         android:layout_width="241dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/navigationView"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="250dp"
         android:layout_marginEnd="84dp"
-        android:layout_marginBottom="58dp"
+        android:layout_marginBottom="114dp"
         android:textColor="@color/purple"
         android:textSize="15sp" />
 

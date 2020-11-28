@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/homescreen_background"
+    tools:context=".HomeActivity">
+
+
+    <ImageButton
+        android:id="@+id/availability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="276dp"
+        android:scaleType="fitStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/availability" />
+
+    <ImageButton
+        android:id="@+id/direction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="276dp"
+        android:scaleType="fitStart"
+        app:layout_constraintStart_toEndOf="@+id/availability"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/direction" />
+
+    <ImageButton
+        android:id="@+id/schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="276dp"
+        android:scaleType="fitStart"
+        app:layout_constraintStart_toEndOf="@+id/direction"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/schedule" />
+
+    <ImageButton
+        android:id="@+id/camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="36dp"
+        android:scaleType="fitStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/availability"
+        android:src="@drawable/camera" />
+
+    <ImageButton
+        android:id="@+id/gatecontrol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="36dp"
+        android:scaleType="fitStart"
+        app:layout_constraintStart_toEndOf="@+id/camera"
+        app:layout_constraintTop_toBottomOf="@+id/direction"
+        android:src="@drawable/gatecontrols" />
+
+    <ImageButton
+        android:id="@+id/lightcontrol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="36dp"
+        android:scaleType="fitStart"
+        app:layout_constraintStart_toEndOf="@+id/gatecontrol"
+        app:layout_constraintTop_toBottomOf="@+id/schedule"
+        android:src="@drawable/lightcontrol" />
+
+    <ImageButton
+        android:id="@+id/signout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="28dp"
+        android:scaleType="fitStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gatecontrol"
+        android:src="@drawable/signout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

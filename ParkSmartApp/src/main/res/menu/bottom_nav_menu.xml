@@ -21,5 +21,4 @@
         android:icon="@drawable/ic_direction_24"
         android:title="@string/nav_direction"/>
 
-
 </menu>

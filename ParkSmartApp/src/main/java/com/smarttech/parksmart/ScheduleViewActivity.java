@@ -1,23 +1,24 @@
 package com.smarttech.parksmart;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class ScheduleViewActivity extends AppCompatActivity {
+public class ScheduleViewActivity extends Fragment{
 
     TextView monS, monE;
     TextView tueS, tueE;
@@ -27,29 +28,25 @@ public class ScheduleViewActivity extends AppCompatActivity {
     TextView satS, satE;
     TextView sunS, sunE;
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_schedule_view_activity);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_schedule_view_activity,container, false);
 
-        //BottomNavigation OnSelect function
-        BottomNavigationView navigation = findViewById(R.id.navigationView);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        monS=(TextView)findViewById(R.id.monStart);
-        monE=(TextView)findViewById(R.id.monEnd);
-        tueS=(TextView)findViewById(R.id.tueStart);
-        tueE=(TextView)findViewById(R.id.tueEnd);
-        wedS=(TextView)findViewById(R.id.wedStart);
-        wedE=(TextView)findViewById(R.id.wedEnd);
-        thurS=(TextView)findViewById(R.id.thurStart);
-        thurE=(TextView)findViewById(R.id.thurEnd);
-        friS=(TextView)findViewById(R.id.friStart);
-        friE=(TextView)findViewById(R.id.friEnd);
-        satS=(TextView)findViewById(R.id.satStart);
-        satE=(TextView)findViewById(R.id.satEnd);
-        sunS=(TextView)findViewById(R.id.sunStart);
-        sunE=(TextView)findViewById(R.id.sunEnd);
+        monS=(TextView) view.findViewById(R.id.monStart);
+        monE=(TextView) view.findViewById(R.id.monEnd);
+        tueS=(TextView) view.findViewById(R.id.tueStart);
+        tueE=(TextView) view.findViewById(R.id.tueEnd);
+        wedS=(TextView) view.findViewById(R.id.wedStart);
+        wedE=(TextView) view.findViewById(R.id.wedEnd);
+        thurS=(TextView) view.findViewById(R.id.thurStart);
+        thurE=(TextView) view.findViewById(R.id.thurEnd);
+        friS=(TextView) view.findViewById(R.id.friStart);
+        friE=(TextView) view.findViewById(R.id.friEnd);
+        satS=(TextView) view.findViewById(R.id.satStart);
+        satE=(TextView) view.findViewById(R.id.satEnd);
+        sunS=(TextView) view.findViewById(R.id.sunStart);
+        sunE=(TextView) view.findViewById(R.id.sunEnd);
 
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -110,49 +107,16 @@ public class ScheduleViewActivity extends AppCompatActivity {
             }
         });
 
-
-
-        Button editButton= findViewById(R.id.editSchedule);
+        Button editButton= view.findViewById(R.id.editSchedule);
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //opens the activity_availability activity
-                Intent intent = new Intent(ScheduleViewActivity.this, ScheduleActivity.class);
+                Intent intent = new Intent(getActivity(), ScheduleActivity.class);
                 startActivity(intent);
             }
         });
 
-
+        return view;
     }
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    Intent intent1 = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent1);
-                    break;
-
-                case R.id.navigation_availability:
-                    Intent intent2 = new Intent(getApplicationContext(), AvailabilityActivity.class);
-                    startActivity(intent2);
-                    break;
-
-                case R.id.navigation_direction:
-                    Intent intent3 = new Intent(getApplicationContext(), DirectionActivity.class);
-                    startActivity(intent3);
-                    break;
-
-                case R.id.navigation_schedule:
-                    Intent intent4 = new Intent(getApplicationContext(), ScheduleViewActivity.class);
-                    startActivity(intent4);
-                    break;
-                default:
-            }
-            return false;
-        }
-    };
 }

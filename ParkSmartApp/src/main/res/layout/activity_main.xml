@@ -4,85 +4,30 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/homescreen_background"
+    android:background="@color/cardview_light_background"
         tools:context=".MainActivity">
 
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/navigationView"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <ImageButton
-        android:id="@+id/availability"
-        android:layout_width="wrap_content"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="276dp"
-        android:scaleType="fitStart"
+        android:background="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/availability" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:labelVisibilityMode="labeled"
+        app:itemHorizontalTranslationEnabled="true"
+        app:itemBackground="?selectableItemBackgroundBorderless"
+        app:itemIconTint="@drawable/nav_item_color_state"
+        app:itemTextColor="@drawable/nav_item_color_state"
+        app:menu="@menu/bottom_nav_menu"/>
 
-    <ImageButton
-        android:id="@+id/direction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="276dp"
-        android:scaleType="fitStart"
-        app:layout_constraintStart_toEndOf="@+id/availability"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/direction" />
-
-    <ImageButton
-        android:id="@+id/schedule"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="276dp"
-        android:scaleType="fitStart"
-        app:layout_constraintStart_toEndOf="@+id/direction"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/schedule" />
-
-    <ImageButton
-        android:id="@+id/camera"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="36dp"
-        android:scaleType="fitStart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/availability"
-        android:src="@drawable/camera" />
-
-    <ImageButton
-        android:id="@+id/gatecontrol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="36dp"
-        android:scaleType="fitStart"
-        app:layout_constraintStart_toEndOf="@+id/camera"
-        app:layout_constraintTop_toBottomOf="@+id/direction"
-        android:src="@drawable/gatecontrols" />
-
-    <ImageButton
-        android:id="@+id/lightcontrol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="36dp"
-        android:scaleType="fitStart"
-        app:layout_constraintStart_toEndOf="@+id/gatecontrol"
-        app:layout_constraintTop_toBottomOf="@+id/schedule"
-        android:src="@drawable/lightcontrol" />
-
-    <ImageButton
-        android:id="@+id/signout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="28dp"
-        android:scaleType="fitStart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gatecontrol"
-        android:src="@drawable/signout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
