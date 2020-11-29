@@ -18,14 +18,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class DirectionActivity extends Fragment{
+public class DirectionActivity extends Fragment {
 
     private static final String TAG = "MainActivity";
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_direction,container, false);
+        View view = inflater.inflate(R.layout.activity_direction, container, false);
 
         //Database connection setup
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -54,14 +54,14 @@ public class DirectionActivity extends Fragment{
                 intent.setPackage("com.google.android.apps.maps");
                 //Intent chooser = Intent.createChooser(intent,"Launch Maps");
 
-                if(intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
                     startActivity(intent);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.e(TAG, "onCancelled: Something went wrong! Error:" + databaseError.getMessage() );
+                Log.e(TAG, "onCancelled: Something went wrong! Error:" + databaseError.getMessage());
             }
         });
 

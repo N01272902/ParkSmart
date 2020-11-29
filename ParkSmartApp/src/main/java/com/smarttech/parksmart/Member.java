@@ -4,7 +4,7 @@ public class Member {
     private String emailAdress;
     private String password;
 
-    public Member(){
+    public Member() {
 
     }
 

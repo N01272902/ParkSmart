@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LightActivity"
-    android:background="@color/colorAccent">
+    android:background="@color/colorAccent"
+    tools:context=".LightActivity">
 
     <TextView
         android:id="@+id/lightHeading"
@@ -67,7 +67,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="186dp"
         android:layout_marginEnd="86dp"
-        android:text="@string/off"/>
+        android:text="@string/off" />
 
     <Button
         android:id="@+id/lightOff2"

@@ -18,6 +18,8 @@
     <string name="DialogExitMsg">Do you want to Exit?</string>
     <string name="DialogYes">Yes</string>
     <string name="DialogNo">No</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <!--Jerin's Strings   -->
     <string name="lightControl">Light Control</string>
@@ -63,6 +65,7 @@
     <string name="sunday">Sunday</string>
 
     <string name="direction">Direction</string>
+
 
     <string-array name="TimeAM">
         <item>12:00 AM</item>

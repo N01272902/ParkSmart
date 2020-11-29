@@ -1,9 +1,5 @@
 package com.smarttech.parksmart;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -25,12 +23,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.concurrent.atomic.AtomicReference;
-
-public class   SignUpActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
     EditText email;
     EditText password;
@@ -40,12 +35,13 @@ public class   SignUpActivity extends AppCompatActivity {
     GoogleSignInOptions gso;
     GoogleSignInClient mGoogleSignInClient;
     Member member;
-    long maxid=0;
+    long maxid = 0;
     private static int RC_SIGN_IN = 123;
     CheckBox savelogincheckbox;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     Boolean savelogin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,12 +58,11 @@ public class   SignUpActivity extends AppCompatActivity {
         editor = sharedPreferences.edit();
 
 
-
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists())
-                    maxid=(dataSnapshot.getChildrenCount());
+                if (dataSnapshot.exists())
+                    maxid = (dataSnapshot.getChildrenCount());
             }
 
             @Override
@@ -80,12 +75,13 @@ public class   SignUpActivity extends AppCompatActivity {
             public void onClick(View v) {
                 member.setEmailAdress(email.getText().toString().trim());
                 member.setPassword(password.getText().toString().trim());
-                reff.child(String.valueOf(maxid +1)).setValue(member);
+                reff.child(String.valueOf(maxid + 1)).setValue(member);
             }
         });
 
-        signIn.setOnClickListener(new View.OnClickListener(){
-            long childId=1;
+        signIn.setOnClickListener(new View.OnClickListener() {
+            long childId = 1;
+
             @Override
             public void onClick(View v) {
                 reff = FirebaseDatabase.getInstance().getReference().child("Member");
@@ -96,28 +92,27 @@ public class   SignUpActivity extends AppCompatActivity {
                         //String p = snapshot.child("password").getValue().toString();
                         childId = snapshot.getChildrenCount();
                         //Toast.makeText(getApplicationContext(),String.valueOf(childId), Toast.LENGTH_SHORT).show();
-                        for(DataSnapshot ds: snapshot.getChildren()){
+                        for (DataSnapshot ds : snapshot.getChildren()) {
                             String key = ds.getKey();
                             String e = ds.child("emailAdress").getValue(String.class);
-                            if(ds.child("emailAdress").getValue(String.class).equals(email.getText().toString().trim())) {
+                            if (ds.child("emailAdress").getValue(String.class).equals(email.getText().toString().trim())) {
                                 //Toast.makeText(getApplicationContext(), ds.child("password").getValue(String.class), Toast.LENGTH_SHORT).show();
-                                if(ds.child("password").getValue(String.class).equals(password.getText().toString().trim())){
+                                if (ds.child("password").getValue(String.class).equals(password.getText().toString().trim())) {
                                     email.setError(null);
                                     password.setError(null);
                                     //Saving data in the device
-                                    if(savelogincheckbox.isChecked()){
-                                        editor.putBoolean("savelogin",true);
-                                        editor.putString("username",email.getText().toString().trim());
-                                        editor.putString("password",password.getText().toString().trim());
+                                    if (savelogincheckbox.isChecked()) {
+                                        editor.putBoolean("savelogin", true);
+                                        editor.putString("username", email.getText().toString().trim());
+                                        editor.putString("password", password.getText().toString().trim());
                                         editor.commit();
                                     }
                                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                     startActivity(intent);
-                                }else{
+                                } else {
                                     password.setError("Incorrect password");
                                 }
-                            }
-                            else{
+                            } else {
                                 email.setError("User does not exist");
                             }
 
@@ -142,7 +137,7 @@ public class   SignUpActivity extends AppCompatActivity {
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
 
         //Build a GoogleSignInClient with the options specified by gs
-        mGoogleSignInClient= GoogleSignIn.getClient(this,gso);
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         //Check for existing Google Sign In account, if the user is already signed in
         //the GoogleSigInAccount will be non-null
@@ -153,14 +148,14 @@ public class   SignUpActivity extends AppCompatActivity {
                 signUp();
             }
         });
-        savelogin = sharedPreferences.getBoolean("savelogin",true);
-        if(savelogin == true)
-        email.setText(sharedPreferences.getString("username",null));
-        password.setText(sharedPreferences.getString("password",null));
+        savelogin = sharedPreferences.getBoolean("savelogin", true);
+        if (savelogin == true)
+            email.setText(sharedPreferences.getString("username", null));
+        password.setText(sharedPreferences.getString("password", null));
     }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         finishAffinity();
         finish();
     }
@@ -170,6 +165,7 @@ public class   SignUpActivity extends AppCompatActivity {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -182,20 +178,21 @@ public class   SignUpActivity extends AppCompatActivity {
             handleSignInResult(task);
         }
     }
+
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
 
             // Signed in successfully, show authenticated UI.
-            GoogleSignInAccount acct =GoogleSignIn.getLastSignedInAccount(this);
-            if(acct != null){
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
+            if (acct != null) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            Log.d("Sign failed",e.toString());
+            Log.d("Sign failed", e.toString());
         }
     }
 

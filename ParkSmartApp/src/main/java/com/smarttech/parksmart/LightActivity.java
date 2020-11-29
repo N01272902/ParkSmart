@@ -1,12 +1,15 @@
 package com.smarttech.parksmart;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -14,18 +17,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class LightActivity extends AppCompatActivity {
+public class LightActivity extends Fragment {
 
     TextView Light1;
     TextView Light2;
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_light);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_light, container, false);
 
-        Light1=(TextView)findViewById(R.id.StatusLight1);
-        Light2=(TextView)findViewById(R.id.StatusLight2);
+        Light1 = (TextView) view.findViewById(R.id.StatusLight1);
+        Light2 = (TextView) view.findViewById(R.id.StatusLight2);
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         //Getting Reference to Root Node
@@ -48,7 +51,7 @@ public class LightActivity extends AppCompatActivity {
             }
         });
 
-        Button GateOpen1= findViewById(R.id.lightOn1);
+        Button GateOpen1 = view.findViewById(R.id.lightOn1);
         GateOpen1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,7 +66,7 @@ public class LightActivity extends AppCompatActivity {
             }
         });
 
-        Button GateOpen2= findViewById(R.id.lightOn2);
+        Button GateOpen2 = view.findViewById(R.id.lightOn2);
         GateOpen2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,7 +81,7 @@ public class LightActivity extends AppCompatActivity {
             }
         });
 
-        Button GateClose1= findViewById(R.id.lightOff1);
+        Button GateClose1 = view.findViewById(R.id.lightOff1);
         GateClose1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,7 +96,7 @@ public class LightActivity extends AppCompatActivity {
             }
         });
 
-        Button GateClose2= findViewById(R.id.lightOff2);
+        Button GateClose2 = view.findViewById(R.id.lightOff2);
         GateClose2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,6 +110,6 @@ public class LightActivity extends AppCompatActivity {
 
             }
         });
-
+        return view;
     }
 }

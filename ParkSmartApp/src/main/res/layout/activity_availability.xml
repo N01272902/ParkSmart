@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AvailabilityActivity"
-    android:background="@color/colorAccent">
+    android:background="@color/colorAccent"
+    tools:context=".AvailabilityActivity">
 
 
-        <TextView
-            android:id="@+id/textView111"
-            android:layout_width="427dp"
-            android:layout_height="173dp"
-            android:layout_gravity="center"
-            android:text="Availability"
-            android:layout_centerInParent="true"
-            android:textSize="40sp"
-            android:textAlignment="center"/>
+    <TextView
+        android:id="@+id/textView111"
+        android:layout_width="427dp"
+        android:layout_height="173dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:text="Availability"
+        android:textAlignment="center"
+        android:textSize="40sp" />
 
 </RelativeLayout>
 

@@ -16,15 +16,16 @@ public class ScheduleActivity extends AppCompatActivity {
     Spinner spinnerAM;
     Spinner spinnerPM;
     Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
 
-        spinnerDay = (Spinner)findViewById(R.id.Weekday);
-        spinnerAM = (Spinner)findViewById(R.id.AM_Time);
-        spinnerPM = (Spinner)findViewById(R.id.PM_Time);
-        button = (Button)findViewById(R.id.button);
+        spinnerDay = (Spinner) findViewById(R.id.Weekday);
+        spinnerAM = (Spinner) findViewById(R.id.AM_Time);
+        spinnerPM = (Spinner) findViewById(R.id.PM_Time);
+        button = (Button) findViewById(R.id.button);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

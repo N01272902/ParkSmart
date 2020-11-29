@@ -18,7 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class ScheduleViewActivity extends Fragment{
+public class ScheduleViewActivity extends Fragment {
 
     TextView monS, monE;
     TextView tueS, tueE;
@@ -31,22 +31,22 @@ public class ScheduleViewActivity extends Fragment{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_schedule_view_activity,container, false);
+        View view = inflater.inflate(R.layout.activity_schedule_view_activity, container, false);
 
-        monS=(TextView) view.findViewById(R.id.monStart);
-        monE=(TextView) view.findViewById(R.id.monEnd);
-        tueS=(TextView) view.findViewById(R.id.tueStart);
-        tueE=(TextView) view.findViewById(R.id.tueEnd);
-        wedS=(TextView) view.findViewById(R.id.wedStart);
-        wedE=(TextView) view.findViewById(R.id.wedEnd);
-        thurS=(TextView) view.findViewById(R.id.thurStart);
-        thurE=(TextView) view.findViewById(R.id.thurEnd);
-        friS=(TextView) view.findViewById(R.id.friStart);
-        friE=(TextView) view.findViewById(R.id.friEnd);
-        satS=(TextView) view.findViewById(R.id.satStart);
-        satE=(TextView) view.findViewById(R.id.satEnd);
-        sunS=(TextView) view.findViewById(R.id.sunStart);
-        sunE=(TextView) view.findViewById(R.id.sunEnd);
+        monS = (TextView) view.findViewById(R.id.monStart);
+        monE = (TextView) view.findViewById(R.id.monEnd);
+        tueS = (TextView) view.findViewById(R.id.tueStart);
+        tueE = (TextView) view.findViewById(R.id.tueEnd);
+        wedS = (TextView) view.findViewById(R.id.wedStart);
+        wedE = (TextView) view.findViewById(R.id.wedEnd);
+        thurS = (TextView) view.findViewById(R.id.thurStart);
+        thurE = (TextView) view.findViewById(R.id.thurEnd);
+        friS = (TextView) view.findViewById(R.id.friStart);
+        friE = (TextView) view.findViewById(R.id.friEnd);
+        satS = (TextView) view.findViewById(R.id.satStart);
+        satE = (TextView) view.findViewById(R.id.satEnd);
+        sunS = (TextView) view.findViewById(R.id.sunStart);
+        sunE = (TextView) view.findViewById(R.id.sunEnd);
 
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -107,7 +107,7 @@ public class ScheduleViewActivity extends Fragment{
             }
         });
 
-        Button editButton= view.findViewById(R.id.editSchedule);
+        Button editButton = view.findViewById(R.id.editSchedule);
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

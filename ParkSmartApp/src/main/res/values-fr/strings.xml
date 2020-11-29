@@ -18,6 +18,8 @@
     <string name="DialogExitMsg">Voulez-vous sortir?</string>
     <string name="DialogYes">Oui</string>
     <string name="DialogNo">Non</string>
+    <string name="navigation_drawer_open">Ouvrir le tiroir de navigation</string>
+    <string name="navigation_drawer_close">Fermer le tiroir de navigation</string>
 
     <!--Jerin's Strings   -->
     <string name="lightControl">Contrôle de la lumière</string>

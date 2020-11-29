@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/nav_home"/>
+        android:title="@string/nav_home" />
 
     <item
         android:id="@+id/navigation_schedule"
         android:icon="@drawable/ic_schedule_24"
-        android:title="@string/nav_schedule"/>
+        android:title="@string/nav_schedule" />
 
     <item
         android:id="@+id/navigation_availability"
         android:icon="@drawable/ic_availability_24"
-        android:title="@string/nav_availability"/>
+        android:title="@string/nav_availability" />
 
     <item
         android:id="@+id/navigation_direction"
         android:icon="@drawable/ic_direction_24"
-        android:title="@string/nav_direction"/>
+        android:title="@string/nav_direction" />
 
 </menu>
