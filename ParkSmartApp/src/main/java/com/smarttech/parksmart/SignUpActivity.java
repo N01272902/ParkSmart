@@ -3,11 +3,14 @@ package com.smarttech.parksmart;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -39,6 +42,10 @@ public class   SignUpActivity extends AppCompatActivity {
     Member member;
     long maxid=0;
     private static int RC_SIGN_IN = 123;
+    CheckBox savelogincheckbox;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+    Boolean savelogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +57,12 @@ public class   SignUpActivity extends AppCompatActivity {
         signIn = findViewById(R.id.signInButton);//
         member = new Member();
         reff = FirebaseDatabase.getInstance().getReference().child("Member");
+        sharedPreferences = getSharedPreferences("loginref", MODE_PRIVATE);
+        savelogincheckbox = findViewById(R.id.checkBox);
+        editor = sharedPreferences.edit();
+
+
+
         reff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -62,7 +75,6 @@ public class   SignUpActivity extends AppCompatActivity {
 
             }
         });
-
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,6 +102,15 @@ public class   SignUpActivity extends AppCompatActivity {
                             if(ds.child("emailAdress").getValue(String.class).equals(email.getText().toString().trim())) {
                                 //Toast.makeText(getApplicationContext(), ds.child("password").getValue(String.class), Toast.LENGTH_SHORT).show();
                                 if(ds.child("password").getValue(String.class).equals(password.getText().toString().trim())){
+                                    email.setError(null);
+                                    password.setError(null);
+                                    //Saving data in the device
+                                    if(savelogincheckbox.isChecked()){
+                                        editor.putBoolean("savelogin",true);
+                                        editor.putString("username",email.getText().toString().trim());
+                                        editor.putString("password",password.getText().toString().trim());
+                                        editor.commit();
+                                    }
                                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                     startActivity(intent);
                                 }else{
@@ -114,7 +135,6 @@ public class   SignUpActivity extends AppCompatActivity {
             }
         });
 
-        //Google signin button clicked
         SignInButton googleButton = findViewById(R.id.sign_in_google_button);
 
         // Configure sign-in to request the user's ID, email address, and basic
@@ -133,6 +153,10 @@ public class   SignUpActivity extends AppCompatActivity {
                 signUp();
             }
         });
+        savelogin = sharedPreferences.getBoolean("savelogin",true);
+        if(savelogin == true)
+        email.setText(sharedPreferences.getString("username",null));
+        password.setText(sharedPreferences.getString("password",null));
     }
 
     @Override
