@@ -35,10 +35,10 @@
     <string name="signUp">S\'inscrire</string>
     <string name="signInButton">S\'identifier</string>
 
-    <!--Saved Preference Strings... Do not translate -->
+    <!--Shared Preference Strings... Do not translate -->
     <string name="checkbox">com.smarttech.parksmart.checkbox</string>
-    <string name="email">com.smarttech.parksmart.email</string>
-    <string name="password">com.smarttech.parksmart.password</string>
+    <string name="user_email">com.smarttech.parksmart.email</string>
+    <string name="user_password">com.smarttech.parksmart.password</string>
 
     <string name="google_button_toast">Connexion avec Google cliqué</string>
     <string name="PasswordErr">Mot de passe incorrect</string>
