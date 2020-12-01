@@ -4,6 +4,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -14,6 +16,8 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.auth.api.identity.SignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -43,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         authListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -104,6 +107,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //gets current user
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        //Assigning nav_header variable for google sign in.
+        //nav_header variable initialization
+        ImageView uImage = navigationView.getHeaderView(0).findViewById(R.id.navHeadprofile);
+        TextView uName = navigationView.getHeaderView(0).findViewById(R.id.name);
+        TextView uEmail = navigationView.getHeaderView(0).findViewById(R.id.userEmail);
+
+        //check validation
+        if (user != null) {
+            //When firebase user is not equal null, set the profile image
+            Glide.with(MainActivity.this)
+                    .load(user.getPhotoUrl())
+                    .apply(new RequestOptions().circleCrop().centerInside())
+                    .into(uImage);
+
+            //Set name and email textView
+            uName.setText(user.getDisplayName());
+            uEmail.setText(user.getEmail());
+        }
+
         //BottomNavigation OnSelect function
         BottomNavigationView navigation = findViewById(R.id.navigationView);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -116,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
         //Initialize google sign in clients
         googleSignInClient = GoogleSignIn.getClient(MainActivity.this,
                 GoogleSignInOptions.DEFAULT_SIGN_IN);
+
     }
 
     private void logout() {
@@ -125,7 +151,6 @@ public class MainActivity extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finishAffinity();
-
 
         //Signout from google
         googleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {

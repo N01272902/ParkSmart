@@ -196,14 +196,14 @@ public class LoginActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         //Check condition
-        if(requestCode == 100){
+        if (requestCode == 100) {
             //When request code is equal to 100
             //Initialize task
             Task<GoogleSignInAccount> signInAccountTask = GoogleSignIn
                     .getSignedInAccountFromIntent(data);
 
             //Check connection
-            if(signInAccountTask.isSuccessful()){
+            if (signInAccountTask.isSuccessful()) {
                 //When google sign in successfully
                 //Initialize string
                 final String s = "Google sign in successful";
@@ -217,12 +217,12 @@ public class LoginActivity extends AppCompatActivity {
                             .getResult(ApiException.class);
 
                     //Check condition
-                    if(googleSignInAccount != null){
+                    if (googleSignInAccount != null) {
                         //When sign in account is not equal to null
                         //Initialize auth credentials
                         AuthCredential authCredential = GoogleAuthProvider
                                 .getCredential(googleSignInAccount.getIdToken()
-                                ,null);
+                                        , null);
 
                         //Check credentials
                         auth.signInWithCredential(authCredential)
@@ -230,15 +230,15 @@ public class LoginActivity extends AppCompatActivity {
                                     @Override
                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                         //Check condition
-                                        if(task.isSuccessful()){
+                                        if (task.isSuccessful()) {
                                             //When task is successful, redirect to main screen
                                             startActivity(new Intent(LoginActivity.this,
                                                     MainActivity.class)
-                                            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
 
                                             //Display Toast
                                             displayToast("Firebase authentication successful");
-                                        }else{
+                                        } else {
                                             //WHen task is unsuccessful
                                             //Display toast
                                             displayToast("Authentication Failed" + task.getException().
@@ -257,7 +257,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void displayToast(String s) {
-        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
     }
 
     private void checkSharedPreferences() {
