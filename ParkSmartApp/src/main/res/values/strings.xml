@@ -9,8 +9,8 @@
     <string name="gate_control_heading">Gate Control</string>
     <string name="entry_gate">Entry Gate</string>
     <string name="exit_gate">Exit Gate</string>
-    <string name="open_gate">Open Gate</string>
-    <string name="close_gate">Close Gate</string>
+    <string name="open_gate">Open</string>
+    <string name="close_gate">Close</string>
     <string name="entry_gate_is_currently_closed">Entry Gate is currently:</string>
     <string name="exit_gate_is_currently_closed">Exit Gate is currently: </string>
     <string name="open">OPEN</string>
@@ -66,6 +66,7 @@
     <string name="sunday">Sunday</string>
 
     <string name="direction">Direction</string>
+    <string name="language">English</string>
 
 
     <string-array name="TimeAM">

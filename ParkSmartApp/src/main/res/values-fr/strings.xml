@@ -9,8 +9,8 @@
     <string name="gate_control_heading">Contrôle de porte</string>
     <string name="entry_gate">Porte d\'entrée</string>
     <string name="exit_gate">Porte de sortie</string>
-    <string name="open_gate">Porte ouverte</string>
-    <string name="close_gate">Fermer la porte</string>
+    <string name="open_gate">Ouvert</string>
+    <string name="close_gate">Fermere</string>
     <string name="entry_gate_is_currently_closed">La porte d\'entrée est actuellement:</string>
     <string name="exit_gate_is_currently_closed">La porte de sortie est actuellement:</string>
     <string name="open">Ouvert</string>
@@ -65,6 +65,7 @@
     <string name="sunday">Dimanche</string>
 
     <string name="direction">Direction</string>
+    <string name="language">French</string>
 
     <string-array name="TimeAM">
         <item>12:00 AM</item>
