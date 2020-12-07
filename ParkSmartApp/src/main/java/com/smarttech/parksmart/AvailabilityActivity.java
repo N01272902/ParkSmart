@@ -52,32 +52,32 @@ public class AvailabilityActivity extends Fragment {
 
                 if(Lot1_status.equals("true")){
                     GradientDrawable gradientDrawable = (GradientDrawable) Lot1.getBackground().mutate();
-                    gradientDrawable.setColor(Color.GREEN);
+                    gradientDrawable.setColor(Color.RED);
 
                 }
                 else{
                     GradientDrawable gradientDrawable = (GradientDrawable) Lot1.getBackground().mutate();
-                    gradientDrawable.setColor(Color.RED);
+                    gradientDrawable.setColor(Color.GREEN);
                 }
 
                 if(Lot2_status.equals("true")){
                     GradientDrawable gradientDrawable = (GradientDrawable) Lot2.getBackground().mutate();
-                    gradientDrawable.setColor(Color.GREEN);
+                    gradientDrawable.setColor(Color.RED);
 
                 }
                 else{
                     GradientDrawable gradientDrawable = (GradientDrawable) Lot2.getBackground().mutate();
-                    gradientDrawable.setColor(Color.RED);
+                    gradientDrawable.setColor(Color.GREEN);
                 }
 
                 if(Lot3_status.equals("true")){
                     GradientDrawable gradientDrawable = (GradientDrawable) Lot3.getBackground().mutate();
-                    gradientDrawable.setColor(Color.GREEN);
+                    gradientDrawable.setColor(Color.RED);
 
                 }
                 else{
                     GradientDrawable gradientDrawable = (GradientDrawable) Lot3.getBackground().mutate();
-                    gradientDrawable.setColor(Color.RED);
+                    gradientDrawable.setColor(Color.GREEN);
                 }
 
 
