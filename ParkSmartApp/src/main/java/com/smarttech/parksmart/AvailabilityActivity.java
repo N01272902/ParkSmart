@@ -49,38 +49,32 @@ public class AvailabilityActivity extends Fragment {
                 String Lot3_status = (String) dataSnapshot.child("Lot_3").getValue();
 
 
-
-                if(Lot1_status.equals("true")){
+                if (Lot1_status.equals("true")) {
                     GradientDrawable gradientDrawable = (GradientDrawable) Lot1.getBackground().mutate();
                     gradientDrawable.setColor(Color.RED);
 
-                }
-                else{
+                } else {
                     GradientDrawable gradientDrawable = (GradientDrawable) Lot1.getBackground().mutate();
                     gradientDrawable.setColor(Color.GREEN);
                 }
 
-                if(Lot2_status.equals("true")){
+                if (Lot2_status.equals("true")) {
                     GradientDrawable gradientDrawable = (GradientDrawable) Lot2.getBackground().mutate();
                     gradientDrawable.setColor(Color.RED);
 
-                }
-                else{
+                } else {
                     GradientDrawable gradientDrawable = (GradientDrawable) Lot2.getBackground().mutate();
                     gradientDrawable.setColor(Color.GREEN);
                 }
 
-                if(Lot3_status.equals("true")){
+                if (Lot3_status.equals("true")) {
                     GradientDrawable gradientDrawable = (GradientDrawable) Lot3.getBackground().mutate();
                     gradientDrawable.setColor(Color.RED);
 
-                }
-                else{
+                } else {
                     GradientDrawable gradientDrawable = (GradientDrawable) Lot3.getBackground().mutate();
                     gradientDrawable.setColor(Color.GREEN);
                 }
-
-
             }
 
             @Override
