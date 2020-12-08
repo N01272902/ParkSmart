@@ -15,7 +15,7 @@
         android:layout_marginTop="100dp"
         android:text="Name"
         android:textColor="@color/colorWhite"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
 
     <EditText
@@ -33,7 +33,7 @@
         android:layout_marginTop="20dp"
         android:text="Email"
         android:textColor="@color/colorWhite"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
 
     <EditText

@@ -19,6 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 public class HomeActivity extends Fragment {
 
     TextView Announcement;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class HomeActivity extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String lang = getString(R.string.language);
-                String appAn= (String) dataSnapshot.child(lang).getValue();
+                String appAn = (String) dataSnapshot.child(lang).getValue();
                 Announcement.setText(appAn);
 
             }
@@ -46,9 +47,6 @@ public class HomeActivity extends Fragment {
 
             }
         });
-
-
-
 
         return view;
     }
