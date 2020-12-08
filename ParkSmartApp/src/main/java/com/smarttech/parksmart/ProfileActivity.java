@@ -1,6 +1,7 @@
 package com.smarttech.parksmart;
 
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,7 +58,8 @@ public class ProfileActivity extends Fragment {
 
                 //Allows user to change email if not signed in with gmail account
                 String userInfo = user.getIdToken(false).getResult().getSignInProvider();
-                if (!newEmail.trim().equals("") && !userInfo.equals("google.com")) {
+                if (!newEmail.trim().equals("") && !userInfo.equals("google.com")
+                        && Patterns.EMAIL_ADDRESS.matcher(newEmail).matches()) {
                     user.updateEmail(newEmail.trim())
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
@@ -65,7 +67,7 @@ public class ProfileActivity extends Fragment {
                                     if (task.isSuccessful()) {
                                         Toast.makeText(getActivity(), "Email address and Name is updated", Toast.LENGTH_LONG).show();
                                     } else {
-                                        Toast.makeText(getActivity(), "Failed to update email!", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getActivity(), "Invalid email address", Toast.LENGTH_LONG).show();
                                     }
                                 }
                             });
