@@ -270,4 +270,6 @@ public class LoginActivity extends AppCompatActivity {
 
         mCheckBox.setChecked(checkbox.equals("True"));
     }
+
+
 }
