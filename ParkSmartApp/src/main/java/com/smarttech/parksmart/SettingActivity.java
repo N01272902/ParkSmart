@@ -145,7 +145,7 @@ public class SettingActivity extends Fragment {
                                             }
                                         });
                                     }else{
-                                        Toast.makeText(getActivity(), "Incorrect old password..",
+                                        Toast.makeText(getActivity(), "Incorrect old password.. OR signed in with Gmail.",
                                                 Toast.LENGTH_SHORT).show();
                                     }
                                 }
