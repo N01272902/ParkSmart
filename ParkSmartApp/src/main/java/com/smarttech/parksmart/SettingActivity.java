@@ -31,8 +31,8 @@ public class SettingActivity extends Fragment {
 
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
-    SharedPreferences sharedPreferences = null;
-    SwitchCompat switchCompat;
+    SharedPreferences sharedPreferences, sharedPreferences2 = null;
+    SwitchCompat switchCompat, switchCompat2;
 
     @Nullable
     @Override
@@ -40,6 +40,7 @@ public class SettingActivity extends Fragment {
         View view = inflater.inflate(R.layout.activity_setting, container, false);
 
         switchCompat = view.findViewById(R.id.switchNightMode);
+        switchCompat2 = view.findViewById(R.id.switchNotifications);
 
         sharedPreferences = getActivity().getSharedPreferences("night", 0);
         Boolean booleanValue = sharedPreferences.getBoolean("night_mode", true);
@@ -67,12 +68,34 @@ public class SettingActivity extends Fragment {
             }
         });
 
+        sharedPreferences2 = getActivity().getSharedPreferences("notifs", 0);
+        Boolean booleanValue2 = sharedPreferences2.getBoolean("notifs_mode", true);
+        if (booleanValue2) {
+            switchCompat2.setChecked(true);
+        }
+
+        switchCompat2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    switchCompat2.setChecked(true);
+                    SharedPreferences.Editor editor = sharedPreferences2.edit();
+                    editor.putBoolean("notifs_mode", true);
+                    editor.apply();
+                } else {
+                    switchCompat2.setChecked(false);
+                    SharedPreferences.Editor editor = sharedPreferences2.edit();
+                    editor.putBoolean("notifs_mode", false);
+                    editor.apply();
+                }
+            }
+        });
+
         final EditText oldPass = view.findViewById(R.id.oldPassword);
         final EditText newPass = view.findViewById(R.id.newPassword);
         final Button confirmPass = view.findViewById(R.id.confirmPassbtn);
         final Button cancelPass = view.findViewById(R.id.cancelBtn);
         final Button deleteAcc = view.findViewById(R.id.deleteAccountbtn);
-
 
         //gets the change pass attribute visibility
         final TextInputLayout inputLayout1 = view.findViewById(R.id.inputlayout1);
@@ -113,6 +136,7 @@ public class SettingActivity extends Fragment {
             }
         };
 
+
         confirmPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,37 +144,36 @@ public class SettingActivity extends Fragment {
                 final String new_password = newPass.getText().toString();
 
                 final String email = user.getEmail();
-                AuthCredential credential = EmailAuthProvider
-                        .getCredential(email, old_password);
 
                 FirebaseAuth fAuth = FirebaseAuth.getInstance();
                 final FirebaseUser user = fAuth.getCurrentUser();
-                if(user != null && !old_password.equals(new_password)
-                        && new_password.length() >= 6 ) {
+                if (user != null && !old_password.equals(new_password) && new_password.length() >= 6
+                        && old_password.length() != 0) {
+                    AuthCredential credential = EmailAuthProvider.getCredential(email, old_password);
                     user.reauthenticate(credential).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        user.updatePassword(new_password).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<Void> task1) {
-                                                if(task1.isSuccessful()){
-                                                    Toast.makeText(getActivity(), "Password updated",
-                                                            Toast.LENGTH_SHORT).show();
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                user.updatePassword(new_password).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task1) {
+                                        if (task1.isSuccessful()) {
+                                            Toast.makeText(getActivity(), "Password updated",
+                                                    Toast.LENGTH_SHORT).show();
 
-                                                }else{
-                                                    Toast.makeText(getActivity(), "Unsuccessful, check old password",
-                                                            Toast.LENGTH_LONG).show();
-                                                }
-                                            }
-                                        });
-                                    }else{
-                                        Toast.makeText(getActivity(), "Incorrect old password.. OR signed in with Gmail.",
-                                                Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            Toast.makeText(getActivity(), "Unsuccessful, check old password",
+                                                    Toast.LENGTH_LONG).show();
+                                        }
                                     }
-                                }
-                            });
-                }else{
+                                });
+                            } else {
+                                Toast.makeText(getActivity(), "Incorrect old password OR signed in with Gmail.",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                } else {
                     Toast.makeText(getActivity(), "Old password must not equal new password and password must be more than 6 letter",
                             Toast.LENGTH_LONG).show();
                 }
@@ -169,7 +192,7 @@ public class SettingActivity extends Fragment {
 
                         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
                         FirebaseUser fuser = firebaseAuth.getCurrentUser();
-                        //if user pressed "yes", then he is allowed to exit from application
+                        //if user pressed "yes", goes to sign up screen
                         if (fuser != null) {
                             FirebaseUser firebaseuser = firebaseAuth.getCurrentUser();
                             firebaseuser.delete()
