@@ -5,6 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bgwhite"
     android:fitsSystemWindows="true"
     tools:context="com.smarttech.parksmart.MainActivity"
     tools:openDrawer="start">
@@ -50,8 +51,11 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="@color/holo_blue_light"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header"
+        app:itemIconTint="@drawable/nav_item_color_state"
+        app:itemTextColor="@color/colorWhite"
         app:menu="@menu/drawer_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

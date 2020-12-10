@@ -32,7 +32,6 @@
         <activity android:name=".ScheduleActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".ResetPasswordActivity" />
-
     </application>
 
 </manifest>

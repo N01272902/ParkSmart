@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_orange_light"
+    android:background="@color/holo_orange_light2"
     tools:context=".HomeActivity">
 
     <ImageView
@@ -21,6 +21,7 @@
         android:layout_height="330dp"
         android:layout_marginBottom="96dp"
         android:text=""
+        android:textColor="@color/colorWhite"
         android:textSize="20sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,26 +35,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="448dp"
         android:text="Annoucements"
+        android:textColor="@color/colorRed"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
-    <!--
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
-            android:src="@drawable/ic_home_black_24dp"
-            app:layout_constraintBottom_toTopOf="@+id/topic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.477" />
-    -->
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

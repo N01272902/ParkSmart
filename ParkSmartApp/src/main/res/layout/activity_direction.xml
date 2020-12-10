@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cardview_light_background"
+    android:background="@color/holo_orange_light"
     tools:context=".DirectionActivity">
 
     <TextView
@@ -14,6 +13,7 @@
         android:layout_gravity="center"
         android:text="@string/direction"
         android:textAlignment="center"
+        android:textColor="@color/colorWhite"
         android:textSize="40sp" />
 
 </RelativeLayout>

@@ -42,7 +42,6 @@
             app:itemTextColor="@drawable/nav_item_color_state"
             app:labelVisibilityMode="labeled"
             app:menu="@menu/bottom_nav_menu" />
-
     </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView

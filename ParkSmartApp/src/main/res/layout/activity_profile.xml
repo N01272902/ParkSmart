@@ -3,10 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_light"
+    android:background="@color/holo_green_light"
     android:orientation="vertical"
     tools:context=".ProfileActivity">
-
 
     <TextView
         android:id="@+id/nameTV"
@@ -17,14 +16,14 @@
         android:textColor="@color/colorWhite"
         android:textSize="20sp" />
 
-
     <EditText
         android:id="@+id/displayName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Name"
+        android:textColor="@color/btnColor"
+        android:textColorHint="@color/btnColor"
         android:theme="@style/CustomInputStyle" />
-
 
     <TextView
         android:id="@+id/emailTV"
@@ -35,20 +34,21 @@
         android:textColor="@color/colorWhite"
         android:textSize="20sp" />
 
-
     <EditText
         android:id="@+id/displayEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Email"
         android:inputType="textEmailAddress"
+        android:textColor="@color/btnColor"
+        android:textColorHint="@color/btnColor"
         android:theme="@style/CustomInputStyle" />
 
     <TextView
         android:id="@+id/errorMsgTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="*Unable to update email... signed in with google account."
+        android:text="*Unable to update email. Signed in with google account."
         android:textColor="@color/colorRed"
         android:visibility="invisible" />
 
@@ -58,9 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:background="@color/mid_state_blue"
+        android:background="@color/btnColor"
         android:text="Save"
-        android:textColor="@color/white" />
-
-
+        android:textColor="@color/colorWhite" />
 </LinearLayout>

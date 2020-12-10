@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/holo_green_light"
     tools:context=".LightActivity">
 
     <TextView
@@ -15,6 +14,7 @@
         android:layout_marginTop="-17dp"
         android:gravity="center_horizontal"
         android:text="@string/lightControl"
+        android:textColor="@color/colorWhite"
         android:textSize="40sp" />
 
     <TextView
@@ -26,8 +26,8 @@
         android:layout_marginStart="61dp"
         android:layout_marginTop="54dp"
         android:text="@string/entryLight"
+        android:textColor="@color/colorWhite"
         android:textSize="30sp" />
-
 
     <TextView
         android:id="@+id/textViewGate2"
@@ -38,6 +38,7 @@
         android:layout_marginStart="63dp"
         android:layout_marginBottom="143dp"
         android:text="@string/exitLight"
+        android:textColor="@color/colorWhite"
         android:textSize="30sp" />
 
     <Button
@@ -48,6 +49,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="100dp"
+        android:background="@color/btnColor"
         android:text="@string/on" />
 
     <Button
@@ -58,6 +60,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="289dp"
         android:layout_marginBottom="139dp"
+        android:background="@color/btnColor"
         android:text="@string/on" />
 
     <Button
@@ -68,6 +71,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="99dp"
+        android:background="@color/btnColor"
         android:text="@string/off" />
 
     <Button
@@ -78,6 +82,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="162dp"
         android:layout_marginBottom="137dp"
+        android:background="@color/btnColor"
         android:text="@string/off" />
 
     <TextView
@@ -91,7 +96,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="107dp"
         android:text="@string/la"
-        android:textColor="@color/purple"
+        android:textColor="@color/colorRed"
         android:textSize="15sp" />
 
     <TextView
@@ -104,7 +109,7 @@
         android:layout_marginStart="278dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="56dp"
-        android:textColor="@color/purple"
+        android:textColor="@color/colorWhite"
         android:textSize="15sp" />
 
     <TextView
@@ -118,7 +123,7 @@
         android:layout_marginEnd="107dp"
         android:layout_marginBottom="95dp"
         android:text="@string/la"
-        android:textColor="@color/purple"
+        android:textColor="@color/colorRed"
         android:textSize="15sp" />
 
     <TextView
@@ -131,7 +136,7 @@
         android:layout_marginStart="276dp"
         android:layout_marginEnd="58dp"
         android:layout_marginBottom="95dp"
-        android:textColor="@color/purple"
+        android:textColor="@color/colorWhite"
         android:textSize="15sp" />
 
 </RelativeLayout>

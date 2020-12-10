@@ -93,6 +93,7 @@ public class SettingActivity extends Fragment {
 
         final EditText oldPass = view.findViewById(R.id.oldPassword);
         final EditText newPass = view.findViewById(R.id.newPassword);
+        final EditText confirm_newPass = view.findViewById(R.id.confirm_newPassword);
         final Button confirmPass = view.findViewById(R.id.confirmPassbtn);
         final Button cancelPass = view.findViewById(R.id.cancelBtn);
         final Button deleteAcc = view.findViewById(R.id.deleteAccountbtn);
@@ -100,6 +101,8 @@ public class SettingActivity extends Fragment {
         //gets the change pass attribute visibility
         final TextInputLayout inputLayout1 = view.findViewById(R.id.inputlayout1);
         final TextInputLayout inputLayout2 = view.findViewById(R.id.inputlayout2);
+        final TextInputLayout inputLayout3 = view.findViewById(R.id.inputlayout3);
+
 
         Button chgPass = view.findViewById(R.id.changePasswordbtn);
         chgPass.setOnClickListener(new View.OnClickListener() {
@@ -107,6 +110,7 @@ public class SettingActivity extends Fragment {
             public void onClick(View v) {
                 inputLayout1.setVisibility(View.VISIBLE);
                 inputLayout2.setVisibility(View.VISIBLE);
+                inputLayout3.setVisibility(View.VISIBLE);
                 confirmPass.setVisibility(View.VISIBLE);
                 cancelPass.setVisibility(View.VISIBLE);
             }

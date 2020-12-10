@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/BG_Grey"
+    android:background="@color/holo_orange_light"
     android:orientation="vertical"
     tools:context=".ScheduleViewActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:orientation="horizontal">
 
         <TextView
@@ -19,16 +19,15 @@
             android:fontFamily="serif-monospace"
             android:gravity="center"
             android:text="@string/schedule"
-            android:textColor="@color/black"
+            android:textColor="@color/colorWhite"
             android:textSize="40sp"
             android:textStyle="bold" />
-
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="50dp"
         android:orientation="horizontal">
 
         <TextView
@@ -38,7 +37,7 @@
             android:background="@drawable/back"
             android:text="@string/day"
             android:textColor="@color/blackText"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="120dp"
@@ -47,7 +46,7 @@
             android:background="@drawable/back"
             android:text="@string/start"
             android:textColor="@color/blackText"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="120dp"
@@ -56,9 +55,7 @@
             android:background="@drawable/back"
             android:text="@string/end"
             android:textColor="@color/blackText"
-            android:textSize="20dp" />
-
-
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -72,7 +69,8 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
             android:text="@string/monday"
-            android:textSize="20dp" />
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/monStart"
@@ -80,7 +78,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
-            android:textSize="20dp" />
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/monEnd"
@@ -88,8 +87,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
-            android:textSize="20dp" />
-
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -103,7 +102,8 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
             android:text="@string/tuesday"
-            android:textSize="20dp" />
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tueStart"
@@ -111,7 +111,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
-            android:textSize="20dp" />
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tueEnd"
@@ -119,8 +120,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
-            android:textSize="20dp" />
-
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -134,7 +135,8 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
             android:text="@string/wednesday"
-            android:textSize="20dp" />
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/wedStart"
@@ -142,7 +144,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
-            android:textSize="20dp" />
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/wedEnd"
@@ -150,8 +153,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
-            android:textSize="20dp" />
-
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -165,7 +168,8 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
             android:text="@string/thursday"
-            android:textSize="20dp" />
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/thurStart"
@@ -173,7 +177,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
-            android:textSize="20dp" />
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/thurEnd"
@@ -181,8 +186,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
-            android:textSize="20dp" />
-
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -196,7 +201,8 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
             android:text="@string/friday"
-            android:textSize="20dp" />
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/friStart"
@@ -204,7 +210,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
-            android:textSize="20dp" />
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/friEnd"
@@ -212,8 +219,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
-            android:textSize="20dp" />
-
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -227,7 +234,8 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
             android:text="@string/saturday"
-            android:textSize="20dp" />
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/satStart"
@@ -235,7 +243,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
-            android:textSize="20dp" />
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/satEnd"
@@ -243,8 +252,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
-            android:textSize="20dp" />
-
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -258,7 +267,8 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
             android:text="@string/sunday"
-            android:textSize="20dp" />
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/sunStart"
@@ -266,7 +276,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
-            android:textSize="20dp" />
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/sunEnd"
@@ -274,8 +285,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/back"
-            android:textSize="20dp" />
-
+            android:textColor="@color/blackText2"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <Button
@@ -283,6 +294,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:background="@drawable/back"
         android:text="@string/editSchedule" />
 
 </LinearLayout>

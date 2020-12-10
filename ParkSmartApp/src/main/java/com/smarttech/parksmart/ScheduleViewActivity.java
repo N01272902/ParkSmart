@@ -111,7 +111,7 @@ public class ScheduleViewActivity extends Fragment {
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //opens the activity_availability activity
+                //opens the edit schedule activity
                 Intent intent = new Intent(getActivity(), ScheduleActivity.class);
                 startActivity(intent);
             }

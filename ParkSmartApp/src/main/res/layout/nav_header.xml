@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="176dp"
-    android:background="@color/mid_state_blue"
+    android:background="@color/holo_blue_light"
     android:gravity="bottom"
     android:orientation="vertical"
     android:padding="16dp"
@@ -18,8 +18,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello, "
+        android:text="Welcome,"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@color/colorWhite"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -28,13 +29,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
-        android:text="Name"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:text="Park Smart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/colorWhite" />
 
     <TextView
         android:id="@+id/userEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="me@email.com" />
+        android:text="parksmart@gmail.com"
+        android:textColor="@color/colorWhite" />
 
 </LinearLayout>

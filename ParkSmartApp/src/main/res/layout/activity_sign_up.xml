@@ -15,7 +15,6 @@
         android:orientation="vertical"
         android:padding="@dimen/activity_horizontal_margin">
 
-
         <ImageView
             android:layout_width="@dimen/logo_w_h"
             android:layout_height="@dimen/logo_w_h"
@@ -38,7 +37,6 @@
                 android:maxLines="1"
                 android:singleLine="true"
                 android:textColor="@color/colorTransparentPink" />
-
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -59,7 +57,6 @@
                 android:singleLine="true"
                 android:textColor="@color/colorTransparentPink"
                 android:theme="@style/CustomInputStyle" />
-
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -82,8 +79,6 @@
             android:text="@string/btn_forgot_password"
             android:textAllCaps="false"
             android:textColor="@color/colorPink" />
-
-        <!-- Link to Login Screen -->
 
         <Button
             android:id="@+id/sign_in_button"
