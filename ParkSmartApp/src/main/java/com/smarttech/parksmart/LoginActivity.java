@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        mGoogleSignInClient = GoogleSignIn.getClient(LoginActivity.this, gso);
 
         btSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -191,43 +191,68 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         if (requestCode == RC_SIGN_IN) {
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            handleSignInResult(task);
-        }
-    }
+            //When request code is equal to 100
+            //Initialize task
+            Task<GoogleSignInAccount> signInAccountTask = GoogleSignIn
+                    .getSignedInAccountFromIntent(data);
 
-    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
-        try {
-            GoogleSignInAccount acc = completedTask.getResult(ApiException.class);
+            //Check connection
+            if (signInAccountTask.isSuccessful()) {
+                //When google sign in successfully
+                //Initialize string
+                final String s = "Google Sign In Successful";
 
-            Toast.makeText(LoginActivity.this, "Signed In Successfully", Toast.LENGTH_SHORT).show();
-            //   startActivity(new Intent(LoginActivity.this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-            FirebaseGoogleAuth(acc);
-        } catch (ApiException e) {
-            Toast.makeText(LoginActivity.this, "Sign In Failed", Toast.LENGTH_SHORT).show();
-            FirebaseGoogleAuth(null);
-        }
-    }
+                //Display toast
+                displayToast(s);
 
-    private void FirebaseGoogleAuth(GoogleSignInAccount acct) {
-        //check if the account is null
-        if (acct != null) {
-            AuthCredential authCredential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
-            auth.signInWithCredential(authCredential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()) {
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-                        finish();
-                    } else {
-                        Toast.makeText(LoginActivity.this, "FireBase Google Auth Failed.", Toast.LENGTH_SHORT).show();
+                //Initialize sign in account
+                try {
+                    GoogleSignInAccount googleSignInAccount = signInAccountTask
+                            .getResult(ApiException.class);
+
+                    //Check condition
+                    if (googleSignInAccount != null) {
+                        //When sign in account is not equal to null
+                        //Initialize auth credentials
+                        AuthCredential authCredential = GoogleAuthProvider
+                                .getCredential(googleSignInAccount.getIdToken()
+                                        , null);
+
+                        //Check credentials
+                        auth.signInWithCredential(authCredential)
+                                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                        //Check condition
+                                        if (task.isSuccessful()) {
+                                            //When task is successful, redirect to main screen
+                                            startActivity(new Intent(LoginActivity.this,
+                                                    MainActivity.class)
+                                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+
+                                            //Display Toast
+                                            // displayToast("Firebase authentication successful");
+
+                                        } else {
+                                            //WHen task is unsuccessful
+                                            //Display toast
+                                            displayToast("Authentication Failed" + task.getException().
+                                                    getMessage());
+                                        }
+                                    }
+                                });
                     }
+                } catch (ApiException e) {
+                    e.printStackTrace();
                 }
-            });
-        } else {
-            Toast.makeText(LoginActivity.this, "Account Does Not Exist!", Toast.LENGTH_SHORT).show();
+            }
         }
+    }
+
+    private void displayToast(String s) {
+        Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
     }
 
     private void checkSharedPreferences() {
