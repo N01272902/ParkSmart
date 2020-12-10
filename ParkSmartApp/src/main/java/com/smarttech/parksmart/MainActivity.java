@@ -21,8 +21,6 @@ import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -108,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.nav_logout:
                         logout();
-                        break;
+                        return true;
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         selectedFragment).commit();
@@ -177,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
     String userInfo = user.getIdToken(false).getResult().getSignInProvider();
 
     private void logout() {
-        //Email and pass signout
+        //Email and pass sign out
         FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
