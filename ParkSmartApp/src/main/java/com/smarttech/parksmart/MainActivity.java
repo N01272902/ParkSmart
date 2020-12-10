@@ -18,7 +18,6 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.google.android.gms.auth.api.identity.SignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -26,7 +25,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.FirebaseAppLifecycleListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -35,18 +33,24 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseAuth.AuthStateListener authListener;
     private DrawerLayout drawer;
-    private GoogleSignInClient googleSignInClient;
+    private GoogleSignInClient mGoogleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //Sets up the splash screen
         //setTheme(R.style.AppTheme);
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        auth = FirebaseAuth.getInstance();
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new HomeActivity()).commit();
+        }
 
+        //Google sign in data
+        mGoogleSignInClient = GoogleSignIn.getClient(this, GoogleSignInOptions.DEFAULT_SIGN_IN);
+
+        auth = FirebaseAuth.getInstance();
         authListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -57,6 +61,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
+
+        if (auth.getCurrentUser() == null) {
+            //closing this activity
+            finish();
+            //starting login activity
+            startActivity(new Intent(this, LoginActivity.class));
+        }
 
         //Navigation Drawer
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -97,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.nav_logout:
                         logout();
-                        // Toast.makeText(getApplicationContext(),"Logout Successful", Toast.LENGTH_LONG).show();
                         break;
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -132,38 +142,6 @@ public class MainActivity extends AppCompatActivity {
         //BottomNavigation OnSelect function
         BottomNavigationView navigation = findViewById(R.id.navigationView);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new HomeActivity()).commit();
-        }
-
-        //Initialize google sign in clients
-        googleSignInClient = GoogleSignIn.getClient(MainActivity.this,
-                GoogleSignInOptions.DEFAULT_SIGN_IN);
-
-    }
-
-    private void logout() {
-        //Email and pass signout
-        FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-        finishAffinity();
-
-        //Signout from google
-        googleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                //Check condition
-                if (task.isSuccessful()) {
-                    auth.signOut();
-                    finishAffinity();
-                }
-
-            }
-        });
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -191,11 +169,38 @@ public class MainActivity extends AppCompatActivity {
             }
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     selectedFragment).commit();
-
             return true;
         }
     };
 
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    String userInfo = user.getIdToken(false).getResult().getSignInProvider();
+
+    private void logout() {
+        //Email and pass signout
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+
+/*
+        //Sign out from google
+        mGoogleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                //Check condition
+                if (task.isSuccessful()) {
+                    // auth.signOut();
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finishAffinity();
+                }
+            }
+        });
+ */
+    }
 
     @Override
     public void onBackPressed() {
@@ -227,16 +232,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+        auth.addAuthStateListener(authListener);
+    }
+
+    @Override
     public void onStop() {
         super.onStop();
         if (authListener != null) {
             auth.removeAuthStateListener(authListener);
         }
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        auth.addAuthStateListener(authListener);
     }
 }
