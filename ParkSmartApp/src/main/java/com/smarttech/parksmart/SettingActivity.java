@@ -146,6 +146,8 @@ public class SettingActivity extends Fragment {
             public void onClick(View v) {
                 String old_password = oldPass.getText().toString();
                 final String new_password = newPass.getText().toString();
+                final String confirm_new_password = confirm_newPass.getText().toString();
+
 
                 final String email = user.getEmail();
 
@@ -153,32 +155,36 @@ public class SettingActivity extends Fragment {
                 final FirebaseUser user = fAuth.getCurrentUser();
                 if (user != null && !old_password.equals(new_password) && new_password.length() >= 6
                         && old_password.length() != 0) {
-                    AuthCredential credential = EmailAuthProvider.getCredential(email, old_password);
-                    user.reauthenticate(credential).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                user.updatePassword(new_password).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task1) {
-                                        if (task1.isSuccessful()) {
-                                            Toast.makeText(getActivity(), "Password updated",
-                                                    Toast.LENGTH_SHORT).show();
+                    if (new_password.equals(confirm_new_password)) {
+                        AuthCredential credential = EmailAuthProvider.getCredential(email, old_password);
+                        user.reauthenticate(credential).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    user.updatePassword(confirm_new_password).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task1) {
+                                            if (task1.isSuccessful()) {
+                                                Toast.makeText(getActivity(), "Password updated",
+                                                        Toast.LENGTH_SHORT).show();
 
-                                        } else {
-                                            Toast.makeText(getActivity(), "Unsuccessful, check old password",
-                                                    Toast.LENGTH_LONG).show();
+                                            } else {
+                                                Toast.makeText(getActivity(), "Unsuccessful, check old password",
+                                                        Toast.LENGTH_SHORT).show();
+                                            }
                                         }
-                                    }
-                                });
-                            } else {
-                                Toast.makeText(getActivity(), "Incorrect old password OR signed in with Gmail.",
-                                        Toast.LENGTH_SHORT).show();
+                                    });
+                                } else {
+                                    Toast.makeText(getActivity(), "Incorrect old password OR signed in with G-mail",
+                                            Toast.LENGTH_SHORT).show();
+                                }
                             }
-                        }
-                    });
+                        });
+                    } else {
+                        Toast.makeText(getActivity(), "New passwords do not match!", Toast.LENGTH_SHORT).show();
+                    }
                 } else {
-                    Toast.makeText(getActivity(), "Old password must not equal new password and password must be more than 6 letter",
+                    Toast.makeText(getActivity(), "Password must be more than 6 letters and Old password cannot equal New password!",
                             Toast.LENGTH_LONG).show();
                 }
             }

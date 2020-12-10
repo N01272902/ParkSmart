@@ -107,7 +107,7 @@
                     android:hint="Old Password"
                     android:importantForAutofill="no"
                     android:inputType="textPassword"
-                    android:textColor="@color/colorTransparentPink"
+                    android:textColor="@color/colorPink"
                     android:theme="@style/CustomInputStyle" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -126,7 +126,7 @@
                     android:hint="New Password"
                     android:importantForAutofill="no"
                     android:inputType="textPassword"
-                    android:textColor="@color/colorTransparentPink"
+                    android:textColor="@color/colorPink"
                     android:theme="@style/CustomInputStyle" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -145,7 +145,7 @@
                     android:hint="Confirm New Password"
                     android:importantForAutofill="no"
                     android:inputType="textPassword"
-                    android:textColor="@color/colorTransparentPink"
+                    android:textColor="@color/colorPink"
                     android:theme="@style/CustomInputStyle" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -157,7 +157,6 @@
                     android:id="@+id/confirmPassbtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
                     android:background="@color/colorPink"
                     android:text="Confirm"
                     android:textColor="@color/colorWhite"
@@ -167,7 +166,6 @@
                     android:id="@+id/cancelBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="right"
                     android:background="@null"
                     android:text="Cancel"
                     android:textColor="@color/colorWhite"
