@@ -39,6 +39,9 @@ public class SettingActivity extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_setting, container, false);
 
+        //Gets current user
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
         switchCompat = view.findViewById(R.id.switchNightMode);
         switchCompat2 = view.findViewById(R.id.switchNotifications);
 
@@ -103,7 +106,6 @@ public class SettingActivity extends Fragment {
         final TextInputLayout inputLayout2 = view.findViewById(R.id.inputlayout2);
         final TextInputLayout inputLayout3 = view.findViewById(R.id.inputlayout3);
 
-
         Button chgPass = view.findViewById(R.id.changePasswordbtn);
         chgPass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,6 +118,12 @@ public class SettingActivity extends Fragment {
             }
         });
 
+        //Removes the password change option for google sign in users
+        String userInformation = user.getIdToken(false).getResult().getSignInProvider();
+        if (userInformation.equals("google.com")) {
+            chgPass.setVisibility(View.GONE);
+        }
+
         cancelPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,8 +135,6 @@ public class SettingActivity extends Fragment {
 
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
-        //get current user
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         authListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -199,7 +205,6 @@ public class SettingActivity extends Fragment {
                 builder.setPositiveButton(R.string.DialogYes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
                         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
                         FirebaseUser fuser = firebaseAuth.getCurrentUser();
                         //if user pressed "yes", goes to sign up screen

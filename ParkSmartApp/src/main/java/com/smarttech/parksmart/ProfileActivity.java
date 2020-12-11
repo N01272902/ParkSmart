@@ -33,13 +33,23 @@ public class ProfileActivity extends Fragment {
         final EditText displayName = view.findViewById(R.id.displayName);
         final EditText displayEmail = view.findViewById(R.id.displayEmail);
         Button savebtn = view.findViewById(R.id.profileSaveBtn);
-        final TextView errorMsg = view.findViewById(R.id.errorMsgTV);
+        final TextView displayEmail2 = view.findViewById(R.id.displayEmail2);
+
+        //final TextView errorMsg = view.findViewById(R.id.errorMsgTV);
 
         //check validation
         if (user != null) {
             //Sets name and email textView
             displayName.setText(user.getDisplayName());
             displayEmail.setText(user.getEmail());
+            displayEmail2.setText(user.getEmail());
+        }
+
+        //Removes the edit email option
+        String userInformation = user.getIdToken(false).getResult().getSignInProvider();
+        if (userInformation.equals("google.com")) {
+            displayEmail.setVisibility(View.GONE);
+            displayEmail2.setVisibility(View.VISIBLE);
         }
 
         savebtn.setOnClickListener(new View.OnClickListener() {
@@ -58,8 +68,8 @@ public class ProfileActivity extends Fragment {
 
                 //Allows user to change email if not signed in with gmail account
                 String userInfo = user.getIdToken(false).getResult().getSignInProvider();
-                if (!newEmail.trim().equals("") && !userInfo.equals("google.com")
-                        && Patterns.EMAIL_ADDRESS.matcher(newEmail).matches()) {
+                if (!newEmail.trim().equals("") && Patterns.EMAIL_ADDRESS.matcher(newEmail).matches()
+                        && !userInfo.equals("google.com")) {
                     user.updateEmail(newEmail.trim())
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
@@ -72,7 +82,7 @@ public class ProfileActivity extends Fragment {
                                 }
                             });
                 } else {
-                    errorMsg.setVisibility(View.VISIBLE);
+                    // errorMsg.setVisibility(View.VISIBLE);
                     Toast.makeText(getActivity(), "Name is updated", Toast.LENGTH_LONG).show();
                 }
             }
