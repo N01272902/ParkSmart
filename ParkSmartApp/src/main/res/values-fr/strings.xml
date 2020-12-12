@@ -69,75 +69,75 @@
     <!-- VIJAY START FROM HERE -->
 
     <!--Mandeep's Strings  -->
-    <string name="editTextTextEmailAddress">Enter email</string>
-    <string name="editTextTextPassword">Password</string>
-    <string name="signUp">Signup</string>
-    <string name="signInButton">Login</string>
-    <string name="google_button_toast">Sign in with Google Clicked</string>
-    <string name="PasswordErr">Incorrect password</string>
-    <string name="emailUsrErr">User does not exist</string>
-    <string name="checkboxMsg">Remember me</string>
+    <string name="editTextTextEmailAddress">Entrez l\'email</string>
+    <string name="editTextTextPassword">Mot de passe</string>
+    <string name="signUp">S\'inscrire</string>
+    <string name="signInButton">S\'identifier</string>
+    <string name="google_button_toast">Connectez-vous avec Google Clicked</string>
+    <string name="PasswordErr">Mot de passe incorrect</string>
+    <string name="emailUsrErr">L\'utilisateur n\'existe pas</string>
+    <string name="checkboxMsg">Souviens-toi de moi</string>
 
-    <string name="action_sign_in_short">REGISTER</string>
+    <string name="action_sign_in_short">S\'INSCRIRE</string>
     <string name="email">Email</string>
-    <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
-    <string name="auth_failed">Authentication failed, check your email and password or sign up</string>
-    <string name="change_email">Change Email</string>
-    <string name="change_password">Change Password</string>
-    <string name="send_password_reset_email">Send password reset email</string>
-    <string name="remove_user">Remove user</string>
-    <string name="new_pass">New Password</string>
+    <string name="minimum_password">Mot de passe trop court, entrez au minimum 6 caractères!</string>
+    <string name="auth_failed">L\'authentification a échoué, vérifiez votre e-mail et votre mot de passe ou inscrivez-vous</string>
+    <string name="change_email">Changer l\'e-mail</string>
+    <string name="change_password">Changer le mot de passed</string>
+    <string name="send_password_reset_email">Envoyer un e-mail de réinitialisation du mot de passe</string>
+    <string name="remove_user">Supprimer l\'utilisateur</string>
+    <string name="new_pass">nouveau mot de passe</string>
     <string name="title_activity_profile">Firebase</string>
-    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_login">se connecter</string>
     <string name="hint_email">Email</string>
-    <string name="hint_password">Password</string>
-    <string name="hint_name">Fullname</string>
-    <string name="btn_login">LOGIN</string>
-    <string name="btn_link_to_register">Not a member? Register here!</string>
-    <string name="btn_link_to_login">Already registered? Login here!</string>
-    <string name="btn_forgot_password">Forgot your password?</string>
-    <string name="btn_reset_password">RESET PASSWORD</string>
-    <string name="btn_back"><![CDATA[<< Back]]></string>
-    <string name="hint_new_email">New Email</string>
-    <string name="btn_change">Change</string>
-    <string name="btn_send">Send</string>
-    <string name="btn_remove">Remove</string>
-    <string name="lbl_forgot_password">Forgot Password?</string>
-    <string name="forgot_password_msg">Enter your registered Email Address to receive password reset instructions</string>
-    <string name="empty_email_err">Enter email address!</string>
-    <string name="enter_password_err">Enter password!</string>
-    <string name="google_signin_success">Google Sign In Successful</string>
-    <string name="auth_failed_msg">Authentication Failed</string>
-    <string name="emailName_update_successful">Email address and Name is updated</string>
-    <string name="invalid_email_msg">Invalid email address</string>
-    <string name="name_updated_msg">Name is updated</string>
-    <string name="reset_email_err_msg">Enter your registered email id</string>
-    <string name="pass_reset_email_msg">We have sent you an email to reset your password!</string>
-    <string name="failed_pass_reset_email">Failed to send reset email!</string>
+    <string name="hint_password">Mot de passe</string>
+    <string name="hint_name">Nom complet</string>
+    <string name="btn_login">S\'IDENTIFIER</string>
+    <string name="btn_link_to_register">Pas un membre? Inscrivez-vous ici!</string>
+    <string name="btn_link_to_login">Déjà enregistré? Connectez-vous ici!</string>
+    <string name="btn_forgot_password">Mot de passe oublié?</string>
+    <string name="btn_reset_password">RÉINITIALISER LE MOT DE PASSE</string>
+    <string name="btn_back"><![CDATA[<< Retour]]></string>
+    <string name="hint_new_email">nouveau courriel</string>
+    <string name="btn_change">Changement</string>
+    <string name="btn_send">Envoyer</string>
+    <string name="btn_remove">Retirer</string>
+    <string name="lbl_forgot_password">Mot de passe oublié?</string>
+    <string name="forgot_password_msg">Entrez votre adresse e-mail enregistrée pour recevoir les instructions de réinitialisation du mot de passe</string>
+    <string name="empty_email_err">Entrer l\'adresse e-mail!</string>
+    <string name="enter_password_err">Entrer le mot de passe!</string>
+    <string name="google_signin_success">Connexion à Google réussie</string>
+    <string name="auth_failed_msg">Authentification échouée</string>
+    <string name="emailName_update_successful">L\'adresse e-mail et le nom sont mis à jour</string>
+    <string name="invalid_email_msg">Adresse e-mail invalide</string>
+    <string name="name_updated_msg">Le nom est mis à jour</string>
+    <string name="reset_email_err_msg">Entrez votre identifiant e-mail enregistré</string>
+    <string name="pass_reset_email_msg">Nous vous avons envoyé un e-mail pour réinitialiser votre mot de passe!</string>
+    <string name="failed_pass_reset_email">Échec de l\'envoi de l\'e-mail de réinitialisation!</string>
 
     <!--Vijay's Strings   -->
-    <string name="OpTime">Enter</string>
-    <string name="end">Closed</string>
-    <string name="start">Open</string>
-    <string name="time">Time</string>
+    <string name="OpTime">Entrer</string>
+    <string name="end">Fermé</string>
+    <string name="start">Ouverte</string>
+    <string name="time">Temps</string>
     <string name="date">Date</string>
-    <string name="setSchedule">Set Schedule</string>
-    <string name="day">Day</string>
-    <string name="editSchedule">Edit Schedule</string>
-    <string name="schedule">Schedule</string>
+    <string name="setSchedule">Définir le calendrier</string>
+    <string name="day">journée</string>
+    <string name="editSchedule">Modifier le calendrier</string>
+    <string name="schedule">Programme</string>
 
-    <string name="howManyLotsAvailable">Number of Lots Available:</string>>
+    <string name="howManyLotsAvailable">Nombre de lots disponibles:</string>>
 
-    <string name="monday">Monday</string>
-    <string name="tuesday">Tuesday</string>
-    <string name="wednesday">Wednesday</string>
-    <string name="thursday">Thursday</string>
-    <string name="friday">Friday</string>
-    <string name="saturday">Saturday</string>
-    <string name="sunday">Sunday</string>
+    <string name="monday">Lundi</string>
+    <string name="tuesday">Mardi</string>
+    <string name="wednesday">Mercredi</string>
+    <string name="thursday">Jeudi</string>
+    <string name="friday">Vendredi</string>
+    <string name="saturday">Samedi</string>
+    <string name="sunday">Dimanche</string>
 
     <string name="direction">Direction</string>
-    <string name="language">English</string>
+    <string name="language">French</string>
 
     <string-array name="TimeAM">
         <item>12:00 AM</item>
@@ -170,13 +170,13 @@
     </string-array>
 
     <string-array name="Week">
-        <item>Monday</item>
-        <item>Tuesday</item>
-        <item>Wednesday</item>
-        <item>Thursday</item>
-        <item>Friday</item>
-        <item>Saturday</item>
-        <item>Sunday</item>
+        <item>Lundi</item>
+        <item>Mardi</item>
+        <item>Mercredi</item>
+        <item>Jeudi</item>
+        <item>Vendredi</item>
+        <item>Samedi</item>
+        <item>Dimanche</item>
     </string-array>
 
     <!-- Do not translate -->
