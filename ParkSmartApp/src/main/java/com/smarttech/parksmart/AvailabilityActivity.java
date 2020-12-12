@@ -10,17 +10,13 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import org.w3c.dom.Text;
 
 public class AvailabilityActivity extends Fragment {
 
@@ -31,9 +27,8 @@ public class AvailabilityActivity extends Fragment {
     TextView Lot2_status;
     TextView Lot3_status;
     TextView numberOfLots;
-    int a,b,c;
+    int a, b, c;
     int lotNumber;
-
 
     @Nullable
     @Override
@@ -52,14 +47,12 @@ public class AvailabilityActivity extends Fragment {
         myRef = myRef.child("Parking_Spot");
 
 
-
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String Lot1_status = (String) dataSnapshot.child("Lot_1").getValue();
                 String Lot2_status = (String) dataSnapshot.child("Lot_2").getValue();
                 String Lot3_status = (String) dataSnapshot.child("Lot_3").getValue();
-
 
                 if (Lot1_status.equals("true")) {
                     GradientDrawable gradientDrawable = (GradientDrawable) Lot1.getBackground().mutate();
@@ -93,14 +86,10 @@ public class AvailabilityActivity extends Fragment {
                     gradientDrawable.setColor(Color.GREEN);
                     c = 1;
                 }
-
                 lotNumber = a + b + c;
 
                 String number = Integer.toString(lotNumber);
                 numberOfLots.setText(number);
-
-
-
             }
 
             @Override
@@ -108,8 +97,6 @@ public class AvailabilityActivity extends Fragment {
 
             }
         });
-
         return view;
     }
-
 }

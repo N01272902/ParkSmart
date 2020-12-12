@@ -28,20 +28,18 @@ public class DirectionActivity extends Fragment {
         View view = inflater.inflate(R.layout.activity_direction, container, false);
 
         //Database connection setup
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
+
         //Getting Reference to Root Node
         DatabaseReference myRef = database.getReference();
+
         //Getting reference to "child 1" node
         myRef = myRef.child("Coordinates");
-        //myRef.setValue("Vijay Matadeen");
-
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String x = dataSnapshot.child("x").getValue().toString();
                 String y = dataSnapshot.child("y").getValue().toString();
-
 
                 String beginning = "google.navigation:q=";
                 String comma = ",";
@@ -49,10 +47,8 @@ public class DirectionActivity extends Fragment {
 
                 final String URI_GPS = beginning + x + comma + y + end;
 
-
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(URI_GPS));
                 intent.setPackage("com.google.android.apps.maps");
-                //Intent chooser = Intent.createChooser(intent,"Launch Maps");
 
                 if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
                     startActivity(intent);
@@ -64,7 +60,6 @@ public class DirectionActivity extends Fragment {
                 Log.e(TAG, "onCancelled: Something went wrong! Error:" + databaseError.getMessage());
             }
         });
-
         return view;
     }
 }

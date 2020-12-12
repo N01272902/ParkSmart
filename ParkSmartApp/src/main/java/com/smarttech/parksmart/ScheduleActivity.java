@@ -36,17 +36,17 @@ public class ScheduleActivity extends AppCompatActivity {
                 Toast.makeText(ScheduleActivity.this, selectDay + " " + selectStart + " " + selectEnd, Toast.LENGTH_SHORT).show();
 
                 final FirebaseDatabase database = FirebaseDatabase.getInstance();
+
                 //Getting Reference to Root Node
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
+
                 //Getting reference to "child 1" node
                 myRef = myRef.child("Schedule_Start/" + selectDay);
                 myRef.setValue(selectStart);
                 myRefEnd = myRefEnd.child("Schedule_End/" + selectDay);
                 myRefEnd.setValue(selectEnd);
-
             }
         });
     }
-
 }

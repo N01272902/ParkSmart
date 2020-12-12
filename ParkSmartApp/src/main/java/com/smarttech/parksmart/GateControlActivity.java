@@ -31,6 +31,7 @@ public class GateControlActivity extends Fragment {
         Gate2 = (TextView) view.findViewById(R.id.StatusGate2);
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
+
         //Getting Reference to Root Node
         DatabaseReference myRef = database.getReference();
         myRef = myRef.child("Gate_Control");
@@ -42,7 +43,6 @@ public class GateControlActivity extends Fragment {
                 Gate1.setText(EntryGate);
                 String ExitGate = (String) dataSnapshot.child("Gate_2").getValue();
                 Gate2.setText(ExitGate);
-
             }
 
             @Override
@@ -55,14 +55,12 @@ public class GateControlActivity extends Fragment {
         GateOpen1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 final FirebaseDatabase database = FirebaseDatabase.getInstance();
                 //Getting Reference to Root Node
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
                 myRef = myRef.child("Gate_Control/Gate_1");
                 myRef.setValue("OPEN");
-
             }
         });
 
@@ -70,14 +68,12 @@ public class GateControlActivity extends Fragment {
         GateOpen2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 final FirebaseDatabase database = FirebaseDatabase.getInstance();
                 //Getting Reference to Root Node
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
                 myRef = myRef.child("Gate_Control/Gate_2");
                 myRef.setValue("OPEN");
-
             }
         });
 
@@ -85,14 +81,12 @@ public class GateControlActivity extends Fragment {
         GateClose1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 final FirebaseDatabase database = FirebaseDatabase.getInstance();
                 //Getting Reference to Root Node
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
                 myRef = myRef.child("Gate_Control/Gate_1");
                 myRef.setValue("CLOSE");
-
             }
         });
 
@@ -100,14 +94,12 @@ public class GateControlActivity extends Fragment {
         GateClose2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 final FirebaseDatabase database = FirebaseDatabase.getInstance();
                 //Getting Reference to Root Node
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
                 myRef = myRef.child("Gate_Control/Gate_2");
                 myRef.setValue("CLOSE");
-
             }
         });
         return view;

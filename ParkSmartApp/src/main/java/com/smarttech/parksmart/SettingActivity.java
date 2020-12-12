@@ -171,26 +171,25 @@ public class SettingActivity extends Fragment {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task1) {
                                             if (task1.isSuccessful()) {
-                                                Toast.makeText(getActivity(), "Password updated",
+                                                Toast.makeText(getActivity(), getString(R.string.password_updated_msg),
                                                         Toast.LENGTH_SHORT).show();
-
                                             } else {
-                                                Toast.makeText(getActivity(), "Unsuccessful, check old password",
+                                                Toast.makeText(getActivity(), getString(R.string.error_pass_msg_settings),
                                                         Toast.LENGTH_SHORT).show();
                                             }
                                         }
                                     });
                                 } else {
-                                    Toast.makeText(getActivity(), "Incorrect old password OR signed in with G-mail",
+                                    Toast.makeText(getActivity(), getString(R.string.incorret_oldPass_settings_err),
                                             Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
                     } else {
-                        Toast.makeText(getActivity(), "New passwords do not match!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), getString(R.string.unmatch_pass_err), Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(getActivity(), "Password must be more than 6 letters and Old password cannot equal New password!",
+                    Toast.makeText(getActivity(), getString(R.string.pass_requirement_msg),
                             Toast.LENGTH_LONG).show();
                 }
             }
@@ -215,11 +214,11 @@ public class SettingActivity extends Fragment {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {
-                                                Toast.makeText(getActivity(), "Your profile is deleted:( Create a account now!", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(getActivity(), getString(R.string.profile_deleted_msg), Toast.LENGTH_SHORT).show();
                                                 startActivity(new Intent(getActivity(), SignUpActivity.class));
                                                 getActivity().finish();
                                             } else {
-                                                Toast.makeText(getActivity(), "Failed to delete your account!", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(getActivity(), getString(R.string.profile_delete_fail_msg), Toast.LENGTH_SHORT).show();
                                             }
                                         }
                                     });

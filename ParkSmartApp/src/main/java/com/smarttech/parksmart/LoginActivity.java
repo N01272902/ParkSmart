@@ -106,7 +106,9 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        //Remember me saved preference function
         checkSharedPreferences();
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,12 +116,12 @@ public class LoginActivity extends AppCompatActivity {
                 final String password = inputPassword.getText().toString();
 
                 if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.empty_email_err), Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.enter_password_err), Toast.LENGTH_SHORT).show();
                     return;
                 }
                 progressBar.setVisibility(View.VISIBLE);
@@ -150,7 +152,7 @@ public class LoginActivity extends AppCompatActivity {
                             }
                         });
 
-                //Shared Preferences checkbox
+                //Shared Preferences for checkbox
                 if (mCheckBox.isChecked()) {
                     //save the checkbox pref.
                     mEditor.putString(getString(R.string.checkbox), "True");
@@ -159,7 +161,6 @@ public class LoginActivity extends AppCompatActivity {
                     //saved the email
                     String sEmail = inputEmail.getText().toString();
                     mEditor.putString(getString(R.string.user_email), sEmail);
-                    //mEditor.commit();
 
                     //save the password
                     String sPassword = inputPassword.getText().toString();
@@ -168,17 +169,14 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     //Sets the checkbox when the application starts
                     mEditor.putString(getString(R.string.checkbox), "False");
-                    // mEditor.commit();
 
                     //saved the email
                     mEditor.putString(getString(R.string.user_email), "");
-                    // mEditor.commit();
 
                     //save the password
                     mEditor.putString(getString(R.string.user_password), "");
                 }
                 mEditor.commit();
-
             }
         });
     }
@@ -202,7 +200,7 @@ public class LoginActivity extends AppCompatActivity {
             if (signInAccountTask.isSuccessful()) {
                 //When google sign in successfully
                 //Initialize string
-                final String s = "Google Sign In Successful";
+                final String s = getString(R.string.google_signin_success);
 
                 //Display toast
                 displayToast(s);
@@ -231,14 +229,10 @@ public class LoginActivity extends AppCompatActivity {
                                             startActivity(new Intent(LoginActivity.this,
                                                     MainActivity.class)
                                                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-
-                                            //Display Toast
-                                            // displayToast("Firebase authentication successful");
-
                                         } else {
                                             //WHen task is unsuccessful
                                             //Display toast
-                                            displayToast("Authentication Failed" + task.getException().
+                                            displayToast(getString(R.string.auth_failed_msg) + task.getException().
                                                     getMessage());
                                         }
                                     }

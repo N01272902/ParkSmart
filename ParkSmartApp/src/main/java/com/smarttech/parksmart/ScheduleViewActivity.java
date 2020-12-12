@@ -48,12 +48,11 @@ public class ScheduleViewActivity extends Fragment {
         sunS = (TextView) view.findViewById(R.id.sunStart);
         sunE = (TextView) view.findViewById(R.id.sunEnd);
 
-
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
+
         //Getting Reference to Root Node
         DatabaseReference myRef = database.getReference();
         myRef = myRef.child("Schedule_Start");
-
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -81,7 +80,6 @@ public class ScheduleViewActivity extends Fragment {
 
         DatabaseReference myRef1 = database.getReference();
         myRef1 = myRef1.child("Schedule_End");
-
         myRef1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -116,7 +114,6 @@ public class ScheduleViewActivity extends Fragment {
                 startActivity(intent);
             }
         });
-
         return view;
     }
 }

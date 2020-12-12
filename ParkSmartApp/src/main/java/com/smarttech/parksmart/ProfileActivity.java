@@ -55,7 +55,6 @@ public class ProfileActivity extends Fragment {
         savebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String newEmail = displayEmail.getText().toString();
                 String newName = displayName.getText().toString();
 
@@ -75,21 +74,18 @@ public class ProfileActivity extends Fragment {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(getActivity(), "Email address and Name is updated", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getActivity(), getString(R.string.emailName_update_successful), Toast.LENGTH_LONG).show();
                                     } else {
-                                        Toast.makeText(getActivity(), "Invalid email address", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getActivity(), getString(R.string.invalid_email_msg), Toast.LENGTH_LONG).show();
                                     }
                                 }
                             });
                 } else {
                     // errorMsg.setVisibility(View.VISIBLE);
-                    Toast.makeText(getActivity(), "Name is updated", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), getString(R.string.name_updated_msg), Toast.LENGTH_LONG).show();
                 }
             }
         });
-
         return view;
     }
-
-
 }

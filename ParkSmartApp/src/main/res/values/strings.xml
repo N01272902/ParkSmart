@@ -43,7 +43,7 @@
     <string name="google_button_toast">Sign in with Google Clicked</string>
     <string name="PasswordErr">Incorrect password</string>
     <string name="emailUsrErr">User does not exist</string>
-    <string name="checkboxMsg">Remember my login information</string>
+    <string name="checkboxMsg">Remember me</string>
 
 
     <!--Vijay's Strings   -->
@@ -145,5 +145,53 @@
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
     <string name="settings_name">Account Settings</string>
     <string name="DialogDeleteMsg">Are you sure you want to delete account?</string>
+    <string name="notif_channel_id">smarttech.parksmart.services.test</string>
+    <string name="empty_email_err">Enter email address!</string>
+    <string name="enter_password_err">Enter password!</string>
+    <string name="google_signin_success">Google Sign In Successful</string>
+    <string name="auth_failed_msg">Authentication Failed</string>
+    <string name="emailName_update_successful">Email address and Name is updated</string>
+    <string name="invalid_email_msg">Invalid email address</string>
+    <string name="name_updated_msg">Name is updated</string>
+    <string name="reset_email_err_msg">Enter your registered email id</string>
+    <string name="pass_reset_email_msg">We have sent you an email to reset your password!</string>
+    <string name="failed_pass_reset_email">Failed to send reset email!</string>
+    <string name="password_updated_msg">Password updated</string>
+    <string name="error_pass_msg_settings">Unsuccessful, check old password</string>
+    <string name="incorret_oldPass_settings_err">Incorrect old password OR signed in with G-mail</string>
+    <string name="unmatch_pass_err">New passwords do not match!</string>
+    <string name="pass_requirement_msg">Password must be more than 6 letters and Old password cannot equal New password!</string>
+    <string name="profile_deleted_msg">Your profile is deleted:( Create a account now!</string>
+    <string name="profile_delete_fail_msg">Failed to delete your account!</string>
+    <string name="pass_short_error">Password too short, enter minimum 6 characters!</string>
+    <string name="used_email_error">Auth Failed: Email address is already in use by another account.</string>
+    <string name="announcements_heading">Announcements</string>
+    <string name="name_heading">Name</string>
+    <string name="enter_name_hint">Enter Name</string>
+    <string name="email_heading">Email</string>
+    <string name="enter_email_hint">Enter Email</string>
+    <string name="google_email_change_err">*Unable to update email. Signed in with google account.</string>
+    <string name="save_btnText">Save</string>
+    <string name="general_heading">General</string>
+    <string name="night_mode_heading">Night Mode</string>
+    <string name="night_mode">Night Mode</string>
+    <string name="notifications_heading">Notifications</string>
+    <string name="push_notifications">Push Notifications</string>
+    <string name="account_settings_heading">Account Settings</string>
+    <string name="old_password_hint">Old Password</string>
+    <string name="new_password_hint">New Password</string>
+    <string name="confirm_new_password_hint">Confirm New Password</string>
+    <string name="confirm_btnText">Confirm</string>
+    <string name="cancel_btnText">Cancel</string>
+    <string name="delete_account_btnText">Delete Account</string>
+    <string name="parksmart_gmail_com">parksmart@gmail.com</string>
+    <string name="park_smart_nav_name">Park Smart</string>
+    <string name="welcome_nav_msg">Welcome,</string>
+    <string name="userimg">userImg</string>
+    <string name="profile_nav_menu">Profile</string>
+    <string name="gate_control_nav_menu">Gate Control</string>
+    <string name="light_control_nav_menu">Light Control</string>
+    <string name="settings_nav_menu">Settings</string>
+    <string name="logout_nav_menu">Logout</string>
 
 </resources>

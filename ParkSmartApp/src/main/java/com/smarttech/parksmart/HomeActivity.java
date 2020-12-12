@@ -25,21 +25,21 @@ public class HomeActivity extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_home, container, false);
 
+        //Displays Parking lots announcements
         Announcement = (TextView) view.findViewById(R.id.annoucement);
 
         //DataBase Connection
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
+
         //Getting Reference to Root Node
         DatabaseReference myRef = database.getReference();
         myRef = myRef.child("Announcement");
-
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String lang = getString(R.string.language);
                 String appAn = (String) dataSnapshot.child(lang).getValue();
                 Announcement.setText(appAn);
-
             }
 
             @Override
@@ -47,7 +47,6 @@ public class HomeActivity extends Fragment {
 
             }
         });
-
         return view;
     }
 }

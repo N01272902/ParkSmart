@@ -31,10 +31,10 @@ public class LightActivity extends Fragment {
         Light2 = (TextView) view.findViewById(R.id.StatusLight2);
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
+
         //Getting Reference to Root Node
         DatabaseReference myRef = database.getReference();
         myRef = myRef.child("Light_Control");
-
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -42,7 +42,6 @@ public class LightActivity extends Fragment {
                 Light1.setText(EntryGate);
                 String ExitGate = (String) dataSnapshot.child("Light_2").getValue();
                 Light2.setText(ExitGate);
-
             }
 
             @Override
@@ -55,14 +54,12 @@ public class LightActivity extends Fragment {
         GateOpen1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 final FirebaseDatabase database = FirebaseDatabase.getInstance();
                 //Getting Reference to Root Node
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
                 myRef = myRef.child("Light_Control/Light_1");
                 myRef.setValue("ON");
-
             }
         });
 
@@ -70,14 +67,12 @@ public class LightActivity extends Fragment {
         GateOpen2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 final FirebaseDatabase database = FirebaseDatabase.getInstance();
                 //Getting Reference to Root Node
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
                 myRef = myRef.child("Light_Control/Light_2");
                 myRef.setValue("ON");
-
             }
         });
 
@@ -85,14 +80,12 @@ public class LightActivity extends Fragment {
         GateClose1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 final FirebaseDatabase database = FirebaseDatabase.getInstance();
                 //Getting Reference to Root Node
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
                 myRef = myRef.child("Light_Control/Light_1");
                 myRef.setValue("OFF");
-
             }
         });
 
@@ -100,14 +93,12 @@ public class LightActivity extends Fragment {
         GateClose2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 final FirebaseDatabase database = FirebaseDatabase.getInstance();
                 //Getting Reference to Root Node
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
                 myRef = myRef.child("Light_Control/Light_2");
                 myRef.setValue("OFF");
-
             }
         });
         return view;

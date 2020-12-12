@@ -24,22 +24,18 @@ public class MyFirebaseInstanceService extends FirebaseMessagingService {
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
         if (remoteMessage.getData().isEmpty()) {
-
             showNotification(remoteMessage.getNotification().getTitle(), remoteMessage.getNotification().getBody());
         } else {
             showNotification(remoteMessage.getData());
-
         }
-
     }
 
     private void showNotification(Map<String, String> data) {
         String title = data.get("title").toString();
         String body = data.get("body").toString();
 
-
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        String NOTIFICATION_CHANNEL_ID = "smarttech.parksmart.services.test";
+        String NOTIFICATION_CHANNEL_ID = getString(R.string.notif_channel_id);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "Notification",
@@ -53,7 +49,6 @@ public class MyFirebaseInstanceService extends FirebaseMessagingService {
         }
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID);
-
         notificationBuilder.setAutoCancel(true)
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setWhen(System.currentTimeMillis())
@@ -63,12 +58,11 @@ public class MyFirebaseInstanceService extends FirebaseMessagingService {
                 .setContentInfo("Info");
 
         notificationManager.notify(new Random().nextInt(), notificationBuilder.build());
-
     }
 
     private void showNotification(String title, String body) {
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        String NOTIFICATION_CHANNEL_ID = "smarttech.parksmart.services.test";
+        String NOTIFICATION_CHANNEL_ID = getString(R.string.notif_channel_id);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "Notification",
@@ -82,7 +76,6 @@ public class MyFirebaseInstanceService extends FirebaseMessagingService {
         }
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID);
-
         notificationBuilder.setAutoCancel(true)
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setWhen(System.currentTimeMillis())

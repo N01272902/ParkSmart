@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         //Sets up the splash screen
         //setTheme(R.style.AppTheme);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         if (auth.getCurrentUser() == null) {
             //closing this activity
             finish();
+
             //starting login activity
             startActivity(new Intent(this, LoginActivity.class));
         }
@@ -85,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
                 Fragment selectedFragment = null;
                 switch (item.getItemId()) {
                     case R.id.nav_profile:
@@ -172,7 +173,6 @@ public class MainActivity extends AppCompatActivity {
     };
 
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    String userInfo = user.getIdToken(false).getResult().getSignInProvider();
 
     private void logout() {
         //Email and pass sign out
@@ -181,23 +181,6 @@ public class MainActivity extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
-
-/*
-        //Sign out from google
-        mGoogleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                //Check condition
-                if (task.isSuccessful()) {
-                    // auth.signOut();
-                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intent);
-                    finishAffinity();
-                }
-            }
-        });
- */
     }
 
     @Override
@@ -205,7 +188,6 @@ public class MainActivity extends AppCompatActivity {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setCancelable(false);
             builder.setMessage(R.string.DialogExitMsg);

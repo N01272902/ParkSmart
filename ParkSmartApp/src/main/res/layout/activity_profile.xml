@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="Name"
+        android:text="@string/name_heading"
         android:textColor="@color/colorWhite"
         android:textSize="20sp" />
 
@@ -20,7 +20,7 @@
         android:id="@+id/displayName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Name"
+        android:hint="@string/enter_name_hint"
         android:textColor="@color/btnColor"
         android:textColorHint="@color/btnColor"
         android:theme="@style/CustomInputStyle" />
@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Email"
+        android:text="@string/email_heading"
         android:textColor="@color/colorWhite"
         android:textSize="20sp" />
 
@@ -38,7 +38,7 @@
         android:id="@+id/displayEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Email"
+        android:hint="@string/enter_email_hint"
         android:inputType="textEmailAddress"
         android:textColor="@color/btnColor"
         android:textColorHint="@color/btnColor"
@@ -56,7 +56,7 @@
         android:id="@+id/errorMsgTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="*Unable to update email. Signed in with google account."
+        android:text="@string/google_email_change_err"
         android:textColor="@color/colorRed"
         android:visibility="invisible" />
 
@@ -67,6 +67,6 @@
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:background="@color/btnColor"
-        android:text="Save"
+        android:text="@string/save_btnText"
         android:textColor="@color/colorWhite" />
 </LinearLayout>

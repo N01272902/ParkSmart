@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50sp"
-                android:text="General"
+                android:text="@string/general_heading"
                 android:textColor="@color/orange"
                 android:textSize="30sp" />
 
@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5sp"
-                android:text="Night Mode"
+                android:text="@string/night_mode_heading"
                 android:textColor="@color/purple"
                 android:textSize="20sp" />
 
@@ -42,14 +42,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:checked="false"
-                android:text="Night Mode"
+                android:text="@string/night_mode"
                 android:textColor="@color/colorWhite" />
 
             <TextView
                 android:id="@+id/NotificationTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Notifications"
+                android:text="@string/notifications_heading"
                 android:textColor="@color/purple"
                 android:textSize="20sp" />
 
@@ -58,7 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Push Notifications"
+                android:text="@string/push_notifications"
                 android:textColor="@color/colorWhite" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -79,7 +79,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5sp"
-                android:text="Account Settings"
+                android:text="@string/account_settings_heading"
                 android:textColor="@color/orange"
                 android:textSize="30sp" />
 
@@ -104,7 +104,7 @@
                     android:id="@+id/oldPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Old Password"
+                    android:hint="@string/old_password_hint"
                     android:importantForAutofill="no"
                     android:inputType="textPassword"
                     android:textColor="@color/colorPink"
@@ -123,7 +123,7 @@
                     android:id="@+id/newPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="New Password"
+                    android:hint="@string/new_password_hint"
                     android:importantForAutofill="no"
                     android:inputType="textPassword"
                     android:textColor="@color/colorPink"
@@ -142,7 +142,7 @@
                     android:id="@+id/confirm_newPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Confirm New Password"
+                    android:hint="@string/confirm_new_password_hint"
                     android:importantForAutofill="no"
                     android:inputType="textPassword"
                     android:textColor="@color/colorPink"
@@ -158,7 +158,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/colorPink"
-                    android:text="Confirm"
+                    android:text="@string/confirm_btnText"
                     android:textColor="@color/colorWhite"
                     android:visibility="gone" />
 
@@ -167,7 +167,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    android:text="Cancel"
+                    android:text="@string/cancel_btnText"
                     android:textColor="@color/colorWhite"
                     android:visibility="gone" />
             </TableRow>
@@ -178,7 +178,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5sp"
                 android:background="@null"
-                android:text="Delete Account"
+                android:text="@string/delete_account_btnText"
                 android:textColor="@color/colorWhite" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
