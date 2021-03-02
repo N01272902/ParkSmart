@@ -59,7 +59,7 @@ public class GateControlActivity extends Fragment {
                 //Getting Reference to Root Node
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
-                myRef = myRef.child("Gate_Control/Gate_1");
+                myRef = myRef.child("M_Gate_Control/Gate_1");
                 myRef.setValue("OPEN");
             }
         });
@@ -72,7 +72,7 @@ public class GateControlActivity extends Fragment {
                 //Getting Reference to Root Node
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
-                myRef = myRef.child("Gate_Control/Gate_2");
+                myRef = myRef.child("M_Gate_Control/Gate_2");
                 myRef.setValue("OPEN");
             }
         });
@@ -85,7 +85,7 @@ public class GateControlActivity extends Fragment {
                 //Getting Reference to Root Node
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
-                myRef = myRef.child("Gate_Control/Gate_1");
+                myRef = myRef.child("M_Gate_Control/Gate_1");
                 myRef.setValue("CLOSE");
             }
         });
@@ -98,7 +98,7 @@ public class GateControlActivity extends Fragment {
                 //Getting Reference to Root Node
                 DatabaseReference myRef = database.getReference();
                 DatabaseReference myRefEnd = database.getReference();
-                myRef = myRef.child("Gate_Control/Gate_2");
+                myRef = myRef.child("M_Gate_Control/Gate_2");
                 myRef.setValue("CLOSE");
             }
         });
