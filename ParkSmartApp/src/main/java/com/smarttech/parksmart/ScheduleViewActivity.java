@@ -54,8 +54,7 @@ public class ScheduleViewActivity extends Fragment {
 
                 if (documentSnapshot.getString("isUser") != null) {
                     editButton.setVisibility(View.GONE);
-                }
-                else{
+                } else {
                     editButton.setVisibility(View.VISIBLE);
                 }
             }

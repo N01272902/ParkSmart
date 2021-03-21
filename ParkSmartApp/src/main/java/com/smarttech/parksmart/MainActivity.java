@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -30,7 +28,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -138,16 +135,15 @@ public class MainActivity extends AppCompatActivity {
                     //if user only
                     Menu menu = navigationView.getMenu();
                     for (int menuItemIndex = 0; menuItemIndex < menu.size(); menuItemIndex++) {
-                        MenuItem menuItem= menu.getItem(menuItemIndex);
-                        if(menuItem.getItemId() == R.id.nav_gatecontrol){
+                        MenuItem menuItem = menu.getItem(menuItemIndex);
+                        if (menuItem.getItemId() == R.id.nav_gatecontrol) {
                             menuItem.setVisible(false);
                         }
-                        if(menuItem.getItemId() == R.id.nav_lightcontrol){
+                        if (menuItem.getItemId() == R.id.nav_lightcontrol) {
                             menuItem.setVisible(false);
                         }
                     }
-                }
-                else{
+                } else {
                     //if admin only
                     Menu menu = navigationView.getMenu();
                     for (int menuItemIndex = 0; menuItemIndex < menu.size(); menuItemIndex++) {
