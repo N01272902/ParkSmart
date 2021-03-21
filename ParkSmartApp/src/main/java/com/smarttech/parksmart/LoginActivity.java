@@ -27,13 +27,20 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText inputEmail, inputPassword;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
+    FirebaseFirestore fStore;
 
     private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
@@ -214,7 +221,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (googleSignInAccount != null) {
                         //When sign in account is not equal to null
                         //Initialize auth credentials
-                        AuthCredential authCredential = GoogleAuthProvider
+                        final AuthCredential authCredential = GoogleAuthProvider
                                 .getCredential(googleSignInAccount.getIdToken()
                                         , null);
 
@@ -225,6 +232,16 @@ public class LoginActivity extends AppCompatActivity {
                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                         //Check condition
                                         if (task.isSuccessful()) {
+                                            fStore = FirebaseFirestore.getInstance();
+                                            FirebaseUser user = auth.getCurrentUser();
+                                            DocumentReference df = fStore.collection("Users").document(user.getUid());
+                                            Map<String, Object> userInfo = new HashMap<>();
+                                            userInfo.put("Email", user.getEmail());
+
+                                            //Specify user status/level
+                                            userInfo.put("isUser", "1");
+                                            df.set(userInfo);
+
                                             //When task is successful, redirect to main screen
                                             startActivity(new Intent(LoginActivity.this,
                                                     MainActivity.class)
