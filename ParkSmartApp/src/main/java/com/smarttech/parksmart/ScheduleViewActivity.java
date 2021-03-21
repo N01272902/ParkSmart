@@ -2,6 +2,7 @@ package com.smarttech.parksmart;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,11 +13,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ScheduleViewActivity extends Fragment {
 
@@ -28,10 +34,32 @@ public class ScheduleViewActivity extends Fragment {
     TextView satS, satE;
     TextView sunS, sunE;
 
+    FirebaseFirestore fStore;
+    FirebaseUser fUser;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_schedule_view_activity, container, false);
+
+        final Button editButton = view.findViewById(R.id.editSchedule);
+
+        //Admin Visibility settings
+        fStore = FirebaseFirestore.getInstance();
+        fUser = FirebaseAuth.getInstance().getCurrentUser();
+        fStore.collection("Users").document(fUser.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Log.d("TAG", "onSuccess: " + documentSnapshot.getData());
+
+                if (documentSnapshot.getString("isUser") != null) {
+                    editButton.setVisibility(View.GONE);
+                }
+                else{
+                    editButton.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
         monS = (TextView) view.findViewById(R.id.monStart);
         monE = (TextView) view.findViewById(R.id.monEnd);
@@ -105,7 +133,6 @@ public class ScheduleViewActivity extends Fragment {
             }
         });
 
-        Button editButton = view.findViewById(R.id.editSchedule);
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -116,4 +143,5 @@ public class ScheduleViewActivity extends Fragment {
         });
         return view;
     }
+
 }

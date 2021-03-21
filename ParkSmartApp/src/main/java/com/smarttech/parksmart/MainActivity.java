@@ -3,7 +3,11 @@ package com.smarttech.parksmart;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,10 +25,14 @@ import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener authListener;
     private DrawerLayout drawer;
     private GoogleSignInClient mGoogleSignInClient;
+    FirebaseFirestore fStore;
+    FirebaseUser fUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         toggle.syncState();
 
         //Nav view menu onclick events
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        final NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -113,6 +123,43 @@ public class MainActivity extends AppCompatActivity {
                         selectedFragment).commit();
                 drawer.closeDrawer(GravityCompat.START);
                 return true;
+            }
+        });
+
+        //Admin Visibility settings
+        fStore = FirebaseFirestore.getInstance();
+        fUser = FirebaseAuth.getInstance().getCurrentUser();
+        fStore.collection("Users").document(fUser.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Log.d("TAG", "onSuccess2: " + documentSnapshot.getData());
+                //Identify user access
+                if (documentSnapshot.getString("isUser") != null) {
+                    //if user only
+                    Menu menu = navigationView.getMenu();
+                    for (int menuItemIndex = 0; menuItemIndex < menu.size(); menuItemIndex++) {
+                        MenuItem menuItem= menu.getItem(menuItemIndex);
+                        if(menuItem.getItemId() == R.id.nav_gatecontrol){
+                            menuItem.setVisible(false);
+                        }
+                        if(menuItem.getItemId() == R.id.nav_lightcontrol){
+                            menuItem.setVisible(false);
+                        }
+                    }
+                }
+                else{
+                    //if admin only
+                    Menu menu = navigationView.getMenu();
+                    for (int menuItemIndex = 0; menuItemIndex < menu.size(); menuItemIndex++) {
+                        MenuItem menuItem = menu.getItem(menuItemIndex);
+                        if (menuItem.getItemId() == R.id.nav_gatecontrol) {
+                            menuItem.setVisible(true);
+                        }
+                        if (menuItem.getItemId() == R.id.nav_lightcontrol) {
+                            menuItem.setVisible(true);
+                        }
+                    }
+                }
             }
         });
 
