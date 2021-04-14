@@ -2,49 +2,32 @@
 <resources>
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccent">#FF9EA1</color>
 
     <!-- Login/Sign Up Page Design -->
     <color name="white">#ffffff</color>
     <color name="colorPink">#FF4081</color>
     <color name="colorTransparentPink">#FF9EA1</color>
 
-    <!-- All Text Color(don't change) -->
-    <color name="colorWhite">#FFFFFF</color>
-    <color name="btnColor">#409A92</color>
-    <color name="orange">#ffffbb33</color>
-    <color name="purple">#7F13D4</color>
-
     <!-- Main Activity Design -->
     <color name="bgwhite">#ffffff</color>
+    <color name="bottom_navwhite">#ffffff</color>
+    <color name="settingswhite">#ffffff</color>
+    <color name="profilewhite">#ffffff</color>
+    <color name="homewhite">#ffffff</color>
 
-    <!-- Navigation Drawer Design (background) -->
-    <color name="holo_blue_light">#ff33b5e5</color>
-    <!-- Nav menu item color is colorWhite and bg is holo_blue! Toolsbar
-            and Bottom Nav are using colorPrimary-->
+    <!-- Home Fragment 'Announcement' + Error Displays(do not change on dark mode) -->
+    <color name="colorRed">#D10D24</color>
 
-    <!-- Bottom Nav Fragments Background Design -->
-    <!-- Home | Schedule | Availability | Direction -->
-    <color name="holo_orange_light">#ffffbb33</color>
-
-    <!-- Availability (Make Dark Mode Grey BG) -->
-    <color name="holo_orange_light2">#ffffbb33</color>
-    <color name="holo_green_light2">#ff99cc00</color>
-
-
-    <!-- Home Fragment 'Announcement' + Error Displays(do not change on dark mode -->
-    <color name="colorRed">#EB3349</color>
-
-    <!-- Schedule Fragment Table Text(Change to white on dark mode -->
+    <!-- Schedule Fragment Table Text(Change to white on dark mode)-->
     <color name="blackText">#070707</color>
     <color name="blackText2">#272525</color>
+    <color name="green">#0BAC11</color>
+    <color name="blue">#2196F3</color>
 
     <!-- Edit Schedule Activity Background Design (don't Change on dark mode) -->
     <color name="BG_Grey">#878484</color>
-
-    <!-- Nav Drawer Fragments Background Design -->
-    <!-- Profile | Gate Control | Light Control | Settings -->
-    <color name="holo_green_light">#ff99cc00</color>
+    <color name="scheduleblackText">#070707</color>
 
     <!-- Costomized Input Theme for Styles.xml(don't change) -->
     <color name="colorStandardBlack">#262626</color>

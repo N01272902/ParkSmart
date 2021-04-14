@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/holo_orange_light2"
+    android:background="@color/homewhite"
     tools:context=".HomeActivity">
 
     <ImageView
@@ -21,7 +21,7 @@
         android:layout_height="330dp"
         android:layout_marginBottom="96dp"
         android:text=""
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/blackText"
         android:textSize="20sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"

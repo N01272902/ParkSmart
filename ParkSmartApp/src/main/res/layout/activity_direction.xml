@@ -3,17 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/holo_orange_light"
+    android:background="@color/BG_Grey"
     tools:context=".DirectionActivity">
 
     <TextView
-        android:layout_width="427dp"
-        android:layout_height="173dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:text="@string/direction"
         android:textAlignment="center"
-        android:textColor="@color/colorWhite"
+        android:background="@color/colorPink"
+        android:textColor="@color/blackText"
         android:textSize="40sp" />
 
 </RelativeLayout>

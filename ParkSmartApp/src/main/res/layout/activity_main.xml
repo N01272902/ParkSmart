@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@color/colorPrimary"
+            android:background="@color/bottom_navwhite"
             app:itemBackground="?selectableItemBackgroundBorderless"
             app:itemHorizontalTranslationEnabled="true"
             app:itemIconTint="@drawable/nav_item_color_state"
@@ -51,11 +51,11 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/holo_blue_light"
+        android:background="@color/bottom_navwhite"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header"
-        app:itemIconTint="@drawable/nav_item_color_state"
-        app:itemTextColor="@color/colorWhite"
+        app:itemIconSize="35dp"
+        app:itemTextColor="@color/blackText"
         app:menu="@menu/drawer_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

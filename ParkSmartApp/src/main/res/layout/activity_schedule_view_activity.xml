@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/holo_orange_light"
+    android:background="@color/bgwhite"
     android:orientation="vertical"
     tools:context=".ScheduleViewActivity">
 
@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
+        android:background="@color/colorPink"
         android:orientation="horizontal">
 
         <TextView
@@ -19,274 +20,289 @@
             android:fontFamily="serif-monospace"
             android:gravity="center"
             android:text="@string/schedule"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/blackText"
             android:textSize="40sp"
             android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:orientation="horizontal">
+        android:layout_height="357dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/colorPink"
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="160dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:text="@string/day"
-            android:textColor="@color/blackText"
-            android:textSize="20sp" />
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="120dp"
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:text="@string/day"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:text="@string/start"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:text="@string/end"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:text="@string/start"
-            android:textColor="@color/blackText"
-            android:textSize="20sp" />
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="120dp"
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:text="@string/monday"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/monStart"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/monEnd"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:text="@string/end"
-            android:textColor="@color/blackText"
-            android:textSize="20sp" />
-    </LinearLayout>
+            android:gravity="center"
+            android:orientation="horizontal">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:text="@string/tuesday"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
 
-        <TextView
-            android:layout_width="160dp"
+            <TextView
+                android:id="@+id/tueStart"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tueEnd"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:text="@string/monday"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/monStart"
-            android:layout_width="120dp"
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:text="@string/wednesday"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/wedStart"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/wedEnd"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/monEnd"
-            android:layout_width="120dp"
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:text="@string/thursday"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/thurStart"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/thurEnd"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
-    </LinearLayout>
+            android:gravity="center"
+            android:orientation="horizontal">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:text="@string/friday"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
 
-        <TextView
-            android:layout_width="160dp"
+            <TextView
+                android:id="@+id/friStart"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/friEnd"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:text="@string/tuesday"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tueStart"
-            android:layout_width="120dp"
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:text="@string/saturday"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/satStart"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/satEnd"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tueEnd"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
-    </LinearLayout>
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:text="@string/sunday"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <TextView
+                android:id="@+id/sunStart"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
 
-        <TextView
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:text="@string/wednesday"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/wedStart"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/wedEnd"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:text="@string/thursday"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/thurStart"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/thurEnd"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:text="@string/friday"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/friStart"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/friEnd"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:text="@string/saturday"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/satStart"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/satEnd"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:text="@string/sunday"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/sunStart"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/sunEnd"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/back"
-            android:textColor="@color/blackText2"
-            android:textSize="20sp" />
+            <TextView
+                android:id="@+id/sunEnd"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back"
+                android:textColor="@color/scheduleblackText"
+                android:textSize="25sp" />
+        </LinearLayout>
     </LinearLayout>
 
     <Button

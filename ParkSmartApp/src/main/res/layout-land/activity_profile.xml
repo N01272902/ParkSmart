@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/holo_green_light"
+    android:background="@color/profilewhite"
     android:orientation="vertical"
     tools:context=".ProfileActivity">
 
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:text="@string/name_heading"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/blackText"
         android:textSize="20sp" />
 
     <EditText
@@ -21,8 +21,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/enter_name_hint"
-        android:textColor="@color/btnColor"
-        android:textColorHint="@color/btnColor"
+        android:textColor="@color/colorPink"
+        android:textColorHint="@color/colorTransparentPink"
         android:theme="@style/CustomInputStyle" />
 
     <TextView
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/email_heading"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/blackText"
         android:textSize="20sp" />
 
     <EditText
@@ -40,15 +40,15 @@
         android:layout_height="wrap_content"
         android:hint="@string/enter_email_hint"
         android:inputType="textEmailAddress"
-        android:textColor="@color/btnColor"
-        android:textColorHint="@color/btnColor"
+        android:textColor="@color/colorPink"
+        android:textColorHint="@color/colorTransparentPink"
         android:theme="@style/CustomInputStyle" />
 
     <TextView
         android:id="@+id/displayEmail2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/btnColor"
+        android:textColor="@color/blackText"
         android:textSize="18sp"
         android:visibility="gone" />
 
@@ -65,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/btnColor"
+        android:background="@color/colorPink"
         android:text="@string/save_btnText"
-        android:textColor="@color/colorWhite" />
+        android:textColor="@color/blackText" />
 </LinearLayout>
