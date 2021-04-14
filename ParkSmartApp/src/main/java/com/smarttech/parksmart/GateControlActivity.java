@@ -34,7 +34,7 @@ public class GateControlActivity extends Fragment {
 
         //Getting Reference to Root Node
         DatabaseReference myRef = database.getReference();
-        myRef = myRef.child("Gate_Control");
+        myRef = myRef.child("M_Gate_Control");
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
