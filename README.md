@@ -12,4 +12,3 @@ All of these functionalities are available through our app which will help you s
 1. Joseph Ajeigbe - N01272902
 2. Vidyaanand Matadeen - N01249194
 3. Mandeep Singh - N01230342
-4. Jerin Joy - N01276691 (*Disclaimer: No longer taking the course)
